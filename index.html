@@ -721,13 +721,12 @@ function PortfolioPremiumOutdoorDigital() {
                   </p>
                 </div>
 
-                <form
-                  className="grid gap-6 px-8 py-10 md:px-12"
-                  onSubmit={(event) => {
-                    event.preventDefault();
-                    alert("Merci, le formulaire est prêt côté interface. Il faudra ensuite le connecter à Formspree, Netlify Forms ou un autre service d’envoi.");
-                  }}
-                >
+               <form
+  action="https://formspree.io/f/xqenwdej"
+  method="POST"
+  className="grid gap-6 px-8 py-10 md:px-12"
+>
+                 <input type="text" name="_gotcha" style={{ display: "none" }} />
                   <div className="grid gap-6 md:grid-cols-2">
                     <label className="grid gap-2 text-sm text-[#5C544B]">
                       Nom
