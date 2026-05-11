@@ -1,0 +1,914 @@
+import { useRef, useState } from "react";
+
+export default function PortfolioPremiumOutdoorDigital() {
+  const projects = [
+    {
+      title: "Michelin / MyTripTailor",
+      type: "Voyage sur mesure & contenus touristiques",
+      place: "France / Europe",
+      text: "Conception d’itinéraires multi-activités, coordination de projets touristiques et création de contenus autour de l’expérience voyage.",
+      tags: ["Itinérance", "Contenus", "Projet digital"],
+      image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        "Expérience autour de la conception de voyages et d’itinéraires touristiques mêlant contenus, coordination et expérience utilisateur dans l’univers du voyage sur mesure.",
+      sections: [
+        {
+          title: "Conception",
+          text: "Création d’itinéraires et expériences pensées pour différents profils de voyageurs, entre logique terrain, contenus et fluidité de parcours.",
+        },
+        {
+          title: "Expérience voyage",
+          text: "Travail autour de l’expérience utilisateur, de la cohérence des parcours et de la valorisation de destinations et activités touristiques.",
+        },
+      ],
+    },
+    {
+      title: "Sun-E-Bike Provence",
+      type: "Cyclotourisme & expérience client",
+      place: "Alpilles • Provence",
+      text: "Conception d’expériences cyclotouristiques en Provence : accueil voyageurs, itinéraires, lecture terrain et valorisation du territoire à vélo.",
+      tags: ["Cyclotourisme", "Terrain", "SEO local"],
+      image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        "Expérience terrain dans le cyclotourisme en Provence mêlant relation voyageurs, conception d’itinéraires, compréhension des usages outdoor et valorisation d’un territoire à travers le vélo.",
+      sections: [
+        {
+          title: "Terrain & itinérance",
+          text: "Accompagnement de voyageurs à vélo dans les Alpilles et le Luberon, avec une attention particulière portée aux parcours, aux rythmes et à l’expérience réelle du terrain.",
+        },
+        {
+          title: "Expérience cyclotouristique",
+          text: "Réflexion autour de la fluidité des parcours, de la lecture du territoire et de la manière dont le vélo transforme l’expérience de découverte locale.",
+        },
+      ],
+    },
+    {
+      title: "Reunion Aventure",
+      type: "Cartographie touristique interactive",
+      place: "Île de La Réunion",
+      text: "Structurer l’offre outdoor d’un territoire volcanique : itinéraires, points d’intérêt, contraintes géographiques, expériences locales.",
+      tags: ["Cartographie", "Outdoor", "UX touristique"],
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        "Projet personnel de cartographie touristique immersive pensé pour mieux raconter les territoires de La Réunion : itinéraires, expériences outdoor, points d’intérêt et lecture du relief.",
+      sections: [
+        {
+          title: "Vision",
+          text: "Créer une plateforme éditoriale et cartographique capable de rendre le territoire plus lisible, inspirant et cohérent pour des voyageurs en recherche d’expériences outdoor.",
+        },
+        {
+          title: "Approche",
+          text: "Travail autour de la lecture du relief, des itinéraires et des dynamiques de mobilité touristique.",
+        },
+      ],
+    },
+    {
+      title: "Ville de La Possession",
+      type: "Développement territorial",
+      place: "Île de La Réunion",
+      text: "Pilotage de projets liés aux mobilités actives, à l’expérience usager et à la valorisation des déplacements doux sur le territoire.",
+      tags: ["Territoire", "Mobilités", "Expérience usager"],
+      image: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        "Pilotage de projets territoriaux autour des mobilités actives et de l’expérience des usagers, avec une réflexion sur les usages, les déplacements et la lecture du territoire.",
+      sections: [
+        {
+          title: "Territoire",
+          text: "Travail sur les infrastructures, les usages et les logiques de déplacement à l’échelle d’un territoire réunionnais en forte évolution.",
+        },
+        {
+          title: "Mobilité & expérience",
+          text: "Approche centrée sur les mobilités douces, l’accessibilité et l’expérience quotidienne des habitants et visiteurs.",
+        },
+      ],
+    },
+  ];
+
+  const strengths = [
+    {
+      icon: "🧭",
+      title: "Conception d’expériences",
+      text: "Transformer un territoire en expérience fluide, cohérente et attractive.",
+    },
+    {
+      icon: "⛰️",
+      title: "Lecture du terrain",
+      text: "Relief, accès, distances, saisonnalité, niveau sportif et logistique terrain.",
+    },
+    {
+      icon: "✦",
+      title: "Valorisation digitale",
+      text: "Contenus, cartographie et outils digitaux au service de l’expérience touristique.",
+    },
+    {
+      icon: "🚴",
+      title: "Culture outdoor",
+      text: "Vélo, trail, randonnée, voyage actif : une pratique vécue sur le terrain.",
+    },
+  ];
+
+  const positioning = [
+    ["01", "Explorer", "Comprendre un territoire par le terrain, les itinéraires et l’expérience vécue."],
+    ["02", "Concevoir", "Imaginer des expériences de voyage fluides, cohérentes et mémorables."],
+    ["03", "Valoriser", "Mettre en lumière les destinations et acteurs touristiques grâce au digital et au storytelling."],
+  ];
+
+  const explorations = [
+    {
+      title: "Voyage vélo au Maroc",
+      subtitle: "Micro-aventure & itinérance",
+      description:
+        "Exploration du Maroc à vélo pour comprendre les dynamiques du voyage lent, l’autonomie terrain et l’expérience utilisateur en itinérance.",
+      image: "https://images.unsplash.com/photo-1489493887464-892be6d1daae?q=80&w=1400&auto=format&fit=crop",
+      meta: "Maroc • Bikepacking • Terrain",
+      longDescription:
+        "Une expérience d’itinérance à vélo pour explorer concrètement les enjeux du voyage lent : autonomie, rythme, effort, orientation, rencontres et lecture du territoire.",
+      sections: [
+        {
+          title: "Terrain",
+          text: "Comprendre un territoire par l’expérience directe : routes, relief, distances, météo, hébergements, alimentation et logistique quotidienne.",
+        },
+        {
+          title: "Apprentissage",
+          text: "Une exploration utile pour penser des expériences de voyage plus réalistes, sensibles et adaptées aux usages des voyageurs actifs.",
+        },
+      ],
+    },
+    {
+      title: "Trail & volcanisme à La Réunion",
+      subtitle: "Lecture du territoire",
+      description:
+        "Pratique régulière du trail et exploration des reliefs réunionnais pour développer une compréhension concrète des contraintes géographiques et des usages outdoor.",
+      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1400&auto=format&fit=crop",
+      meta: "La Réunion • Trail • Relief",
+      longDescription:
+        "Une pratique régulière du trail sur les reliefs réunionnais pour développer une lecture concrète de la montagne tropicale, des accès et des contraintes terrain.",
+      sections: [
+        {
+          title: "Lecture du relief",
+          text: "Observer comment le dénivelé, la chaleur, les sentiers, les accès et la météo influencent directement l’expérience outdoor.",
+        },
+        {
+          title: "Culture outdoor",
+          text: "Une pratique vécue qui renforce la crédibilité terrain dans la conception d’itinéraires et d’expériences touristiques actives.",
+        },
+      ],
+    },
+    {
+      title: "Cyclotourisme en Provence",
+      subtitle: "Mobilité & expérience locale",
+      description:
+        "Exploration des Alpilles et du Luberon à vélo pour analyser les usages du tourisme actif, les infrastructures et les parcours voyageurs.",
+      image: "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1400&auto=format&fit=crop",
+      meta: "Provence • Vélo • Itinérance",
+      longDescription:
+        "Une exploration du vélo comme outil de découverte locale, entre mobilité douce, expérience touristique et valorisation des paysages provençaux.",
+      sections: [
+        {
+          title: "Mobilité",
+          text: "Analyser la manière dont le vélo transforme la perception d’un territoire : distances, rythme, arrêts, villages, points de vue et confort d’usage.",
+        },
+        {
+          title: "Expérience locale",
+          text: "Comprendre comment une activité outdoor peut devenir un support de découverte plus profond qu’un simple déplacement.",
+        },
+      ],
+    },
+    {
+      title: "Randonnée & itinérance alpine",
+      subtitle: "Montagne & micro-aventure",
+      description:
+        "Immersion en montagne pour développer une compréhension concrète des logiques outdoor : effort, refuge, météo, accessibilité et expérience terrain.",
+      image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1400&auto=format&fit=crop",
+      meta: "Alpes • Randonnée • Outdoor",
+      longDescription:
+        "Une immersion en montagne pour nourrir une compréhension plus fine des logiques d’itinérance, de refuge, d’effort et d’expérience outdoor premium.",
+      sections: [
+        {
+          title: "Montagne",
+          text: "Approcher la montagne comme un territoire d’expérience : accès, sécurité, météo, effort, panorama, hébergement et rythme de progression.",
+        },
+        {
+          title: "Micro-aventure",
+          text: "Penser des expériences outdoor accessibles, mémorables et cohérentes avec les attentes d’un public en recherche de sens et d’immersion.",
+        },
+      ],
+    },
+  ];
+
+  const projectScrollRef = useRef(null);
+  const explorationScrollRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedExploration, setSelectedExploration] = useState(null);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
+  const scrollProjects = (direction) => {
+    if (!projectScrollRef.current) return;
+
+    projectScrollRef.current.scrollBy({
+      left: direction === "left" ? -420 : 420,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollExplorations = (direction) => {
+    if (!explorationScrollRef.current) return;
+
+    explorationScrollRef.current.scrollBy({
+      left: direction === "left" ? -420 : 420,
+      behavior: "smooth",
+    });
+  };
+
+  if (typeof console !== "undefined") {
+    console.assert(projects.length === 4, "Expected 4 highlighted projects");
+    console.assert(
+      projects.every(
+        (project) =>
+          project.title &&
+          project.text &&
+          project.image &&
+          project.tags.length > 0 &&
+          project.sections.length > 0
+      ),
+      "Every project must have title, text, image, tags and detail sections"
+    );
+    console.assert(strengths.length === 4, "Expected 4 positioning strengths");
+    console.assert(positioning.length === 3, "Expected 3 positioning statements");
+    console.assert(explorations.length >= 2, "Expected at least 2 explorations");
+    console.assert(
+      explorations.every(
+        (exploration) =>
+          exploration.title &&
+          exploration.image &&
+          exploration.description &&
+          exploration.longDescription &&
+          exploration.sections.length > 0
+      ),
+      "Every exploration must have title, image and description"
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#F7F2EA] text-[#1F1B16] font-sans">
+      <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-[#F7F2EA]/85 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#top" className="font-serif text-xl font-bold tracking-wide">
+            Corentin RÉGNIER
+          </a>
+
+          <nav className="hidden mr-24 gap-8 text-xs uppercase tracking-[0.25em] text-[#6B6257] md:flex">
+            <a href="#profil" className="hover:text-[#1F1B16]">Profil</a>
+            <a href="#projets" className="hover:text-[#1F1B16]">Projets</a>
+            <a href="#approche" className="hover:text-[#1F1B16]">Approche</a>
+            <a href="#contact" className="hover:text-[#1F1B16]">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2400&auto=format&fit=crop"
+              className="h-full w-full object-cover"
+              alt="Paysage naturel premium"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
+            <div className="absolute inset-0 bg-[#3A2D1D]/20" />
+          </div>
+
+          <div className="relative mx-auto grid max-w-7xl items-end gap-12 px-6 py-24 md:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-3xl animate-[fadeUp_.8s_ease-out_both] text-white">
+              <p className="mb-6 text-xs uppercase tracking-[0.35em] text-white/75">
+                Tourisme • itinérance • expériences outdoor
+              </p>
+
+              <h1 className="font-serif text-5xl leading-[0.95] tracking-tight md:text-7xl">
+                Concevoir des expériences outdoor visibles, lisibles et désirables.
+              </h1>
+
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/85">
+                Chef de projet digital spécialisé tourisme, entre exploration terrain, conception d’itinéraires et valorisation des expériences touristiques.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="#projets"
+                  className="group rounded-full bg-white px-7 py-4 text-sm font-medium text-[#1F1B16] transition hover:bg-[#E8D8C2]"
+                >
+                  Voir les projets <span className="ml-2 inline-block transition group-hover:translate-x-1">→</span>
+                </a>
+
+                <button
+                  onClick={() => setIsContactOpen(true)}
+                  className="rounded-full border border-white/50 px-7 py-4 text-sm text-white transition hover:bg-white/10"
+                  type="button"
+                >
+                  Me contacter
+                </button>
+              </div>
+            </div>
+
+            <div className="hidden animate-[fadeUp_.8s_ease-out_.15s_both] rounded-[2rem] border border-white/20 bg-white/12 p-6 text-white backdrop-blur-xl md:block">
+              <p className="text-xs uppercase tracking-[0.3em] text-white/60">Positionnement</p>
+
+              <div className="mt-6 grid gap-5">
+                {positioning.map(([number, title, description]) => (
+                  <div key={number} className="border-t border-white/20 pt-5">
+                    <div className="flex gap-5">
+                      <span className="font-serif text-3xl text-[#E8D8C2]">{number}</span>
+                      <div>
+                        <h3 className="font-serif text-2xl font-bold">{title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-white/70">{description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="profil" className="mx-auto max-w-7xl px-6 py-24">
+          <div className="grid items-center gap-16 md:grid-cols-[0.7fr_1.3fr]">
+            <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+                alt="Portrait outdoor premium"
+                className="h-[620px] w-full object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+
+              <div className="absolute bottom-0 left-0 p-8 text-white">
+                <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                  Outdoor • itinérance • territoire
+                </p>
+
+                <p className="mt-3 font-serif text-3xl leading-tight">
+                  Une approche pensée depuis le terrain.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-[#8B6F47]">Profil</p>
+
+              <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+                Un profil hybride entre terrain, itinérance et stratégie touristique.
+              </h2>
+
+              <div className="mt-10 text-xl leading-9 text-[#4F473F]">
+                <p>
+                  Mon rôle : concevoir, structurer et valoriser des expériences de voyage cohérentes, attractives et pensées pour le terrain.
+                </p>
+
+                <p className="mt-6">
+                  Je combine exploration terrain, culture outdoor, gestion de projet touristique, conception d’itinéraires et outils digitaux pour mieux raconter et développer des destinations, activités et expériences de voyage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projets" className="bg-[#1F1B16] py-24 text-white">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-[#C7A66B]">Sélection</p>
+                <h2 className="mt-4 font-serif text-4xl md:text-5xl">Projets & expériences</h2>
+              </div>
+
+              <p className="max-w-md text-white/65">
+                Une preuve par le terrain : tourisme, vélo, itinérance, territoire, digital.
+              </p>
+            </div>
+
+            <div className="relative">
+              <button
+                onClick={() => scrollProjects("left")}
+                className="absolute left-0 top-10 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-2xl text-[#1F1B16] shadow-2xl backdrop-blur-md transition hover:scale-105 hover:bg-white md:left-4"
+                aria-label="Scroll projects left"
+                type="button"
+              >
+                ←
+              </button>
+
+              <button
+                onClick={() => scrollProjects("right")}
+                className="absolute right-0 top-10 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-2xl text-[#1F1B16] shadow-2xl backdrop-blur-md transition hover:scale-105 hover:bg-white md:right-4"
+                aria-label="Scroll projects right"
+                type="button"
+              >
+                →
+              </button>
+
+              <div
+                ref={projectScrollRef}
+                className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
+              >
+                {projects.map((project) => (
+                  <article
+                    key={project.title}
+                    onClick={() => setSelectedProject(project)}
+                    className="group min-w-[340px] max-w-[340px] flex-shrink-0 cursor-pointer snap-start overflow-hidden rounded-[2rem] bg-[#2B261F] shadow-2xl transition duration-300 hover:-translate-y-1 md:min-w-[420px] md:max-w-[420px]"
+                  >
+                    <div className="h-64 overflow-hidden">
+                      <img
+                        src={project.image}
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                        alt={project.title}
+                      />
+                    </div>
+
+                    <div className="p-7">
+                      <p className="text-xs uppercase tracking-[0.25em] text-[#C7A66B]">
+                        {project.place}
+                      </p>
+
+                      <h3 className="mt-3 font-serif text-3xl">{project.title}</h3>
+
+                      <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/45">
+                        {project.type}
+                      </p>
+
+                      <p className="mt-5 leading-7 text-white/70">{project.text}</p>
+
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/70"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="mt-8 flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-[#C7A66B] opacity-80 transition group-hover:translate-x-1">
+                        Découvrir le projet →
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="explorations" className="bg-[#EFE7DB] py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-[#8B6F47]">Explorations terrain</p>
+                <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+                  Le terrain comme laboratoire d’expérience.
+                </h2>
+              </div>
+
+              <p className="max-w-md text-[#6B6257]">
+                Des expériences personnelles choisies pour nourrir une compréhension réelle du voyage actif, de l’itinérance et des usages outdoor.
+              </p>
+            </div>
+
+            <div className="relative">
+              <button
+                onClick={() => scrollExplorations("left")}
+                className="absolute left-0 top-10 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-2xl text-[#1F1B16] shadow-2xl backdrop-blur-md transition hover:scale-105 hover:bg-white md:left-4"
+                aria-label="Scroll left"
+                type="button"
+              >
+                ←
+              </button>
+
+              <button
+                onClick={() => scrollExplorations("right")}
+                className="absolute right-0 top-10 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-2xl text-[#1F1B16] shadow-2xl backdrop-blur-md transition hover:scale-105 hover:bg-white md:right-4"
+                aria-label="Scroll right"
+                type="button"
+              >
+                →
+              </button>
+
+              <div
+                ref={explorationScrollRef}
+                className="flex snap-x snap-mandatory gap-8 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
+              >
+                {explorations.map((exploration) => (
+                  <article
+                    key={exploration.title}
+                    onClick={() => setSelectedExploration(exploration)}
+                    className="group min-w-[340px] max-w-[340px] flex-shrink-0 cursor-pointer snap-start overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-300 hover:-translate-y-1 md:min-w-[420px] md:max-w-[420px]"
+                  >
+                    <div className="h-80 overflow-hidden">
+                      <img
+                        src={exploration.image}
+                        alt={exploration.title}
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                      />
+                    </div>
+
+                    <div className="p-8">
+                      <p className="text-xs uppercase tracking-[0.25em] text-[#8B6F47]">
+                        {exploration.meta}
+                      </p>
+
+                      <h3 className="mt-3 font-serif text-3xl text-[#1F1B16]">
+                        {exploration.title}
+                      </h3>
+
+                      <p className="mt-2 text-sm uppercase tracking-[0.18em] text-[#8A8073]">
+                        {exploration.subtitle}
+                      </p>
+
+                      <p className="mt-6 leading-7 text-[#5C544B]">
+                        {exploration.description}
+                      </p>
+
+                      <div className="mt-8 flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-[#8B6F47] opacity-80 transition group-hover:translate-x-1">
+                        Découvrir l’exploration →
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="approche" className="mx-auto max-w-7xl px-6 py-24">
+          <div className="grid gap-5 md:grid-cols-4">
+            {strengths.map((strength) => (
+              <div
+                key={strength.title}
+                className="rounded-[2rem] border border-black/10 bg-white/60 p-8 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#8B6F47]/20 bg-[#F3E8D8] text-3xl shadow-sm">
+                  {strength.icon}
+                </div>
+
+                <h3 className="mt-6 text-center font-serif text-2xl font-bold">{strength.title}</h3>
+                <p className="mt-3 text-center leading-7 text-[#6B6257]">{strength.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#F3ECE2] py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-20 text-center">
+              <p className="text-xs uppercase tracking-[0.3em] text-[#8B6F47]">
+                Outils
+              </p>
+
+              <h2 className="mt-4 font-serif text-4xl md:text-5xl">
+                Une boîte à outils au service de l’expérience touristique.
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                "Conception d’itinéraires",
+                "Cartographie touristique",
+                "SEO local & contenus",
+                "Google Maps",
+                "Storytelling destination",
+                "UX voyage",
+                "Outdoor & itinérance",
+                "Google Analytics",
+                "QGIS",
+              ].map((tool) => (
+                <div
+                  key={tool}
+                  className="rounded-full border border-black/10 bg-white px-5 py-3 text-sm tracking-[0.08em] text-[#4F473F] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  {tool}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden py-28 text-white">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2400&auto=format&fit=crop"
+            className="absolute inset-0 h-full w-full object-cover"
+            alt="Montagnes et itinérance"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+
+          <div className="relative mx-auto max-w-4xl px-6 text-center">
+            <div className="mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full border border-[#E8D8C2]/60 text-2xl text-[#E8D8C2]">
+              △
+            </div>
+
+            <h2 className="mx-auto max-w-5xl font-serif text-4xl leading-tight md:text-6xl">
+              Comprendre un territoire,<br />
+              puis transformer cette lecture<br />
+              en expérience de voyage cohérente.
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white/75">
+              Terrain, itinérance, expérience voyage, contenus et outils digitaux : c’est cette approche hybride que je souhaite mettre au service d’acteurs du voyage actif premium, des expériences outdoor et du tourisme sur-mesure.
+            </p>
+          </div>
+        </section>
+
+        {selectedExploration && (
+          <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/75 backdrop-blur-md">
+            <div className="min-h-screen px-4 py-10 md:px-10">
+              <div className="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] bg-[#F7F2EA] text-[#1F1B16] shadow-2xl">
+                <div className="relative h-[420px] overflow-hidden">
+                  <img
+                    src={selectedExploration.image}
+                    alt={selectedExploration.title}
+                    className="h-full w-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  <button
+                    onClick={() => setSelectedExploration(null)}
+                    className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-xl text-[#1F1B16] transition hover:scale-105"
+                    type="button"
+                    aria-label="Close exploration detail"
+                  >
+                    ✕
+                  </button>
+
+                  <div className="absolute bottom-0 left-0 p-8 text-white md:p-12">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                      {selectedExploration.meta}
+                    </p>
+
+                    <h2 className="mt-4 font-serif text-5xl leading-none md:text-7xl">
+                      {selectedExploration.title}
+                    </h2>
+
+                    <p className="mt-4 text-sm uppercase tracking-[0.2em] text-white/70">
+                      {selectedExploration.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid gap-16 px-8 py-14 md:grid-cols-[0.9fr_1.1fr] md:px-12">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-[#8B6F47]">
+                      Exploration terrain
+                    </p>
+
+                    <p className="mt-6 text-2xl leading-10 text-[#3F392F]">
+                      {selectedExploration.longDescription}
+                    </p>
+                  </div>
+
+                  <div className="space-y-12">
+                    {selectedExploration.sections.map((section) => (
+                      <div key={section.title} className="border-t border-black/10 pt-8">
+                        <h3 className="font-serif text-3xl">{section.title}</h3>
+                        <p className="mt-5 leading-8 text-[#5C544B]">{section.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {isContactOpen && (
+          <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/75 backdrop-blur-md">
+            <div className="flex min-h-screen items-center justify-center px-4 py-10 md:px-10">
+              <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-[2.5rem] bg-[#F7F2EA] text-[#1F1B16] shadow-2xl">
+                <button
+                  onClick={() => setIsContactOpen(false)}
+                  className="absolute right-6 top-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-xl text-[#1F1B16] transition hover:scale-105"
+                  type="button"
+                  aria-label="Close contact form"
+                >
+                  ✕
+                </button>
+
+                <div className="bg-[#1F1B16] px-8 py-12 text-white md:px-12">
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#C7A66B]">
+                    Contact
+                  </p>
+
+                  <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">
+                    Discuter d’une opportunité.
+                  </h2>
+
+                  <p className="mt-6 max-w-2xl leading-8 text-white/70">
+                    Projet touristique, mission digitale, expérience outdoor ou collaboration éditoriale : envoyez-moi quelques lignes pour ouvrir la discussion.
+                  </p>
+                </div>
+
+                <form
+                  className="grid gap-6 px-8 py-10 md:px-12"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    alert("Merci, le formulaire est prêt côté interface. Il faudra ensuite le connecter à Formspree, Netlify Forms ou un autre service d’envoi.");
+                  }}
+                >
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <label className="grid gap-2 text-sm text-[#5C544B]">
+                      Nom
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        className="rounded-2xl border border-black/10 bg-white px-5 py-4 text-[#1F1B16] outline-none transition focus:border-[#8B6F47]"
+                        placeholder="Votre nom"
+                      />
+                    </label>
+
+                    <label className="grid gap-2 text-sm text-[#5C544B]">
+                      Email
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        className="rounded-2xl border border-black/10 bg-white px-5 py-4 text-[#1F1B16] outline-none transition focus:border-[#8B6F47]"
+                        placeholder="votre@email.com"
+                      />
+                    </label>
+                  </div>
+
+                  <label className="grid gap-2 text-sm text-[#5C544B]">
+                    Message
+                    <textarea
+                      name="message"
+                      required
+                      rows={6}
+                      className="resize-none rounded-2xl border border-black/10 bg-white px-5 py-4 text-[#1F1B16] outline-none transition focus:border-[#8B6F47]"
+                      placeholder="Expliquez brièvement votre projet, votre besoin ou l’opportunité à discuter."
+                    />
+                  </label>
+
+                  <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <p className="text-sm leading-6 text-[#6B6257]">
+                      Réponse par email. Formulaire à connecter ensuite à un service d’envoi.
+                    </p>
+
+                    <button
+                      type="submit"
+                      className="w-fit rounded-full bg-[#1F1B16] px-8 py-4 text-sm text-white transition hover:bg-[#3A2D1D]"
+                    >
+                      Envoyer le message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {selectedProject && (
+          <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/75 backdrop-blur-md">
+            <div className="min-h-screen px-4 py-10 md:px-10">
+              <div className="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] bg-[#F7F2EA] text-[#1F1B16] shadow-2xl">
+                <div className="relative h-[420px] overflow-hidden">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="h-full w-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-xl text-[#1F1B16] transition hover:scale-105"
+                    type="button"
+                    aria-label="Close project detail"
+                  >
+                    ✕
+                  </button>
+
+                  <div className="absolute bottom-0 left-0 p-8 text-white md:p-12">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                      {selectedProject.place}
+                    </p>
+
+                    <h2 className="mt-4 font-serif text-5xl leading-none md:text-7xl">
+                      {selectedProject.title}
+                    </h2>
+
+                    <p className="mt-4 text-sm uppercase tracking-[0.2em] text-white/70">
+                      {selectedProject.type}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid gap-16 px-8 py-14 md:grid-cols-[0.9fr_1.1fr] md:px-12">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-[#8B6F47]">
+                      Présentation
+                    </p>
+
+                    <p className="mt-6 text-2xl leading-10 text-[#3F392F]">
+                      {selectedProject.longDescription}
+                    </p>
+
+                    <div className="mt-10 flex flex-wrap gap-3">
+                      {selectedProject.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-black/10 bg-white px-4 py-2 text-xs uppercase tracking-[0.15em] text-[#5C544B]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-12">
+                    {selectedProject.sections.map((section) => (
+                      <div key={section.title} className="border-t border-black/10 pt-8">
+                        <h3 className="font-serif text-3xl">{section.title}</h3>
+                        <p className="mt-5 leading-8 text-[#5C544B]">{section.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
+
+      <footer
+        id="contact"
+        className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-14 md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          <p className="font-serif text-2xl font-bold">Corentin RÉGNIER</p>
+          <p className="mt-2 text-[#6B6257]">
+            Chef de projet digital spécialisé tourisme & outdoor.
+          </p>
+
+          <div className="mt-6 flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/in/corentin-r%C3%A9gnier-48331259/?locale=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white transition hover:-translate-y-1 hover:shadow-lg"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5 text-[#0A66C2]"
+              >
+                <path d="M20.45 20.45h-3.554v-5.569c0-1.328-.027-3.037-1.85-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.603 0 4.267 2.371 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 11.001-4.124 2.062 2.062 0 01-.001 4.124zM7.116 20.45H3.558V9h3.558v11.45z" />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.strava.com/athletes/82685781"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white transition hover:-translate-y-1 hover:shadow-lg"
+              aria-label="Strava"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5 text-[#FC4C02]"
+              >
+                <path d="M15.387 17.944l-3.05-6.013h-2.39l5.44 10.736 5.44-10.736h-2.39l-3.05 6.013zM9.97 1.333L3.173 14.75h4.78l2.017-3.98 2.017 3.98h4.78L9.97 1.333z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <button
+          onClick={() => setIsContactOpen(true)}
+          className="w-fit rounded-full bg-[#1F1B16] px-7 py-4 text-sm text-white transition hover:bg-[#3A2D1D]"
+          type="button"
+        >
+          Discuter d’une opportunité
+        </button>
+      </footer>
+
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </div>
+  );
+}
