@@ -853,10 +853,32 @@ function PortfolioPremiumOutdoorDigital() {
                         </span>
                       ))}
                     </div>
+                    
+                    {selectedProject.mapEmbed && (
+                      <div
+                        className="mt-10 overflow-hidden rounded-[1.5rem] shadow-2xl"
+                        dangerouslySetInnerHTML={{
+                          __html: selectedProject.mapEmbed,
+                        }}
+                      />
+                    )}
+
+                    {selectedProject.highlights && (
+                      <div className="mt-8 grid grid-cols-2 gap-3">
+                        {selectedProject.highlights.map((item, index) => (
+                          <div
+                            key={index}
+                            className="rounded-2xl bg-white px-5 py-4 text-sm text-[#3F392F] shadow-sm"
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-12">
-                    {selectedProject.sections.map((section) => (
+                    {selectedProject.sections?.map((section) => (
                       <div key={section.title} className="border-t border-black/10 pt-8">
                         <h3 className="font-serif text-3xl">{section.title}</h3>
                         <p className="mt-5 leading-8 text-[#5C544B]">{section.text}</p>
