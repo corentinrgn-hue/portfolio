@@ -179,8 +179,6 @@ function PortfolioPremiumOutdoorDigital() {
   insight:
     "Une immersion terrain pour mieux comprendre les logiques d’itinérance, les contraintes réelles du voyage actif et les attentes des voyageurs outdoor."
 },
-      ],
-    },
     {
       title: "Trail & vélo à La Réunion",
       subtitle: "Lecture du territoire",
@@ -290,7 +288,7 @@ function PortfolioPremiumOutdoorDigital() {
           exploration.image &&
           exploration.description &&
           exploration.longDescription &&
-          exploration.sections.length > 0
+          (exploration.sections?.length > 0 || exploration.mapEmbed)
       ),
       "Every exploration must have title, image and description"
     );
@@ -694,10 +692,32 @@ function PortfolioPremiumOutdoorDigital() {
                     <p className="mt-6 text-2xl leading-10 text-[#3F392F]">
                       {selectedExploration.longDescription}
                     </p>
+
+                    {selectedExploration.mapEmbed && (
+                      <div
+                        className="mt-10 overflow-hidden rounded-[1.5rem] shadow-2xl"
+                        dangerouslySetInnerHTML={{
+                          __html: selectedExploration.mapEmbed,
+                        }}
+                      />
+                    )}
+
+                    {selectedExploration.highlights && (
+                      <div className="mt-8 grid grid-cols-2 gap-3">
+                        {selectedExploration.highlights.map((item, index) => (
+                          <div
+                            key={index}
+                            className="rounded-2xl bg-white px-5 py-4 text-sm text-[#3F392F] shadow-sm"
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-12">
-                    {selectedExploration.sections.map((section) => (
+                    {selectedExploration.sections?.map((section) => (
                       <div key={section.title} className="border-t border-black/10 pt-8">
                         <h3 className="font-serif text-3xl">{section.title}</h3>
                         <p className="mt-5 leading-8 text-[#5C544B]">{section.text}</p>
