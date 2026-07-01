@@ -3,43 +3,1216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =========================================================
+       1. INFORMATIONS GÉNÉRALES DU SITE
+       Modifie ici le titre Google, la description et le favicon.
+  ========================================================== -->
   <title>Corentin Régnier</title>
-  <meta name="description" content="Portfolio de Corentin Régnier — chef de projet spécialisé tourisme, outdoor et expériences de territoire." />
+  <meta name="description" content="Portfolio de Corentin Régnier — concepteur de voyages, chef de projet tourisme outdoor et expériences de territoire." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/jpeg" href="logo-app1.png">
+
   <style>
-    :root{--bg:#F7F2EA;--dark:#1F1B16;--muted:#6B6257;--gold:#C7A66B;--brown:#8B6F47;--cream:#EFE7DB;--card:#2B261F}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--dark);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.font-logo,.serif{font-family:'Cormorant Garamond',serif}.container{max-width:1280px;margin:auto;padding:0 24px}.header{position:fixed;top:0;z-index:50;width:100%;border-bottom:1px solid rgba(0,0,0,.1);background:rgba(247,242,234,.88);backdrop-filter:blur(18px)}.header-inner{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;letter-spacing:.12em}.nav{display:flex;gap:32px;margin-right:70px;font-size:12px;text-transform:uppercase;letter-spacing:.25em;color:var(--muted)}.nav a:hover{color:var(--dark)}.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:76px}.hero-bg,.image-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.35),transparent),rgba(58,45,29,.2)}.hero-content{position:relative;color:white;max-width:820px;padding:100px 24px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.32em;color:var(--brown)}.hero .eyebrow{color:rgba(255,255,255,.75)}h1,h2,h3,p{margin-top:0}h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,8vw,6.5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:28px}h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin-bottom:0}h3{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.05;margin:0}.lead{font-size:18px;line-height:1.8;color:rgba(255,255,255,.84);max-width:680px}.btn-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}.btn{display:inline-flex;border-radius:999px;padding:15px 28px;border:1px solid transparent;font-size:14px;cursor:pointer;transition:.2s}.btn-light{background:white;color:var(--dark)}.btn-light:hover{background:#E8D8C2}.btn-outline{border-color:rgba(255,255,255,.5);color:white;background:transparent}.btn-outline:hover{background:rgba(255,255,255,.1)}section{padding:96px 0}.profile-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:64px;align-items:center}.portrait{position:relative;border-radius:40px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.25)}.portrait img{height:620px;width:100%;object-fit:cover}.portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent 55%)}.portrait-text{position:absolute;left:32px;bottom:28px;z-index:1;color:white}.portrait-text p:first-child{font-size:12px;text-transform:uppercase;letter-spacing:.28em;color:rgba(255,255,255,.72)}.portrait-text p:last-child{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.05}.profile-copy{font-size:20px;line-height:1.85;color:#4F473F}.dark-section{background:var(--dark);color:white}.section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px}.section-head p:last-child{max-width:440px;color:rgba(255,255,255,.65);line-height:1.7}.cream .section-head p:last-child{color:var(--muted)}.slider-wrap{position:relative}.slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:18px;scrollbar-width:none}.slider::-webkit-scrollbar{display:none}.card{min-width:340px;max-width:340px;scroll-snap-align:start;border-radius:32px;overflow:hidden;cursor:pointer;transition:.25s;box-shadow:0 18px 45px rgba(0,0,0,.18)}.card:hover{transform:translateY(-5px)}.dark-card{background:var(--card);color:white}.light-card{background:white;color:var(--dark)}.card-img{height:260px;overflow:hidden}.exploration .card-img{height:320px}.card-img img{height:100%;width:100%;object-fit:cover;transition:.7s}.card:hover img{transform:scale(1.05)}.card-body{padding:28px}.meta{font-size:12px;text-transform:uppercase;letter-spacing:.22em;color:var(--gold)}.light-card .meta{color:var(--brown)}.type{font-size:13px;text-transform:uppercase;letter-spacing:.17em;color:rgba(255,255,255,.45);margin-top:8px}.light-card .type{color:#8A8073}.card p.desc{margin:22px 0 0;line-height:1.7;color:rgba(255,255,255,.7)}.light-card p.desc{color:#5C544B}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.tag{border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:6px 12px;font-size:12px;color:rgba(255,255,255,.7)}.dark-link,.light-link{margin-top:28px;font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold)}.light-link{color:var(--brown)}.arrow{position:absolute;top:40px;z-index:5;width:56px;height:56px;border-radius:999px;border:0;background:rgba(255,255,255,.95);font-size:26px;color:var(--dark);box-shadow:0 10px 35px rgba(0,0,0,.25);cursor:pointer}.arrow.left{left:16px}.arrow.right{right:16px}.cream{background:var(--cream)}.strengths{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.strength{background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.1);border-radius:32px;padding:32px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.04)}.strength .icon{width:64px;height:64px;margin:0 auto 24px;border-radius:999px;background:#F3E8D8;border:1px solid rgba(139,111,71,.2);display:flex;align-items:center;justify-content:center;font-size:30px}.tools{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:48px}.tool{background:white;border:1px solid rgba(0,0,0,.1);border-radius:999px;padding:13px 20px;font-size:14px;letter-spacing:.07em;color:#4F473F}.quote{position:relative;overflow:hidden;color:white;text-align:center}.quote:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:1}.quote .container{position:relative;z-index:2;max-width:900px}.quote h2{font-size:clamp(2.6rem,6vw,5.5rem)}.quote p{margin:30px auto 0;max-width:720px;line-height:1.8;color:rgba(255,255,255,.75);font-size:18px}.footer{display:flex;justify-content:space-between;align-items:center;gap:40px;padding:56px 24px}.socials{display:flex;gap:16px;margin-top:24px}.social{width:48px;height:48px;border-radius:999px;background:white;border:1px solid rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.05)}.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);overflow-y:auto;padding:40px 16px}.modal.active{display:block}.modal-card{max-width:1000px;margin:auto;background:var(--bg);border-radius:40px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.45)}.modal-hero{height:420px;position:relative;overflow:hidden;color:white}.modal-hero img{width:100%;height:100%;object-fit:cover}.modal-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,.2),transparent)}.close{position:absolute;right:24px;top:24px;z-index:3;width:48px;height:48px;border-radius:999px;border:0;background:rgba(255,255,255,.9);font-size:20px;cursor:pointer}.modal-title{position:absolute;z-index:2;left:40px;bottom:34px;right:40px}.modal-title h2{font-size:clamp(3rem,7vw,6rem);line-height:.9}.modal-body{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;padding:56px 48px}.modal-body p.big{font-size:24px;line-height:1.7;color:#3F392F}.modal-section{border-top:1px solid rgba(0,0,0,.1);padding-top:28px;margin-bottom:42px}.modal-section p{line-height:1.8;color:#5C544B}.modal iframe{width:100%;height:320px;border:0;border-radius:20px}.highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.highlight{background:white;border-radius:16px;padding:15px;color:#3F392F}.contact-modal .modal-card{max-width:760px}.contact-head{background:var(--dark);color:white;padding:48px}.contact-head p{color:rgba(255,255,255,.7);line-height:1.8}.contact-form{display:grid;gap:22px;padding:40px 48px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}label{display:grid;gap:8px;font-size:14px;color:#5C544B}input,textarea{border:1px solid rgba(0,0,0,.1);border-radius:18px;background:white;padding:15px 18px;font:inherit;color:var(--dark)}textarea{resize:none}.submit-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.btn-dark{background:var(--dark);color:white}.btn-dark:hover{background:#3A2D1D}@media(max-width:850px){.nav{display:none}.profile-grid,.modal-body{grid-template-columns:1fr}.section-head{display:block}.strengths{grid-template-columns:1fr}.footer{display:block}.form-grid{grid-template-columns:1fr}.portrait img{height:520px}.card{min-width:82vw;max-width:82vw}.arrow{display:none}.hero-content{padding-top:80px}.modal-title{left:24px;bottom:24px}.modal-body{padding:40px 26px}.contact-head,.contact-form{padding:34px 26px}}
+    /* =========================================================
+       2. DESIGN GLOBAL
+       Couleurs, typo, boutons, structure générale.
+    ========================================================== */
+    :root {
+      --bg: #F7F2EA;
+      --cream: #EFE7DB;
+      --cream-2: #F3ECE2;
+      --dark: #1F1B16;
+      --card-dark: #2B261F;
+      --muted: #6B6257;
+      --text-soft: #4F473F;
+      --gold: #C7A66B;
+      --brown: #8B6F47;
+      --white-soft: rgba(255, 255, 255, 0.75);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--dark);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .serif, .logo, h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--brown);
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 2rem;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    section { padding: 96px 0; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 15px 28px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-light { background: white; color: var(--dark); }
+    .btn-light:hover { background: #E8D8C2; }
+    .btn-outline { border-color: rgba(255,255,255,0.5); color: white; background: transparent; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .btn-dark { background: var(--dark); color: white; }
+    .btn-dark:hover { background: #3A2D1D; }
+
+    /* =========================================================
+       3. HEADER
+    ========================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      z-index: 50;
+      width: 100%;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      background: rgba(247,242,234,0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+      margin-right: 70px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+    }
+
+    .nav a:hover { color: var(--dark); }
+
+    /* =========================================================
+       4. HERO
+    ========================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 76px;
+    }
+
+    .hero-bg, .quote-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.35), transparent), rgba(58,45,29,0.2);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 820px;
+      padding: 100px 24px;
+    }
+
+    .hero .eyebrow { color: rgba(255,255,255,0.75); }
+
+    .lead {
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.84);
+      max-width: 680px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    /* =========================================================
+       5. PROFIL
+    ========================================================== */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .portrait {
+      position: relative;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+
+    .portrait img {
+      height: 620px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .portrait::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.35), transparent 55%);
+    }
+
+    .portrait-text {
+      position: absolute;
+      left: 32px;
+      bottom: 28px;
+      z-index: 1;
+      color: white;
+    }
+
+    .portrait-text .small {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .portrait-text .big {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      line-height: 1.05;
+    }
+
+    .profile-copy {
+      font-size: 20px;
+      line-height: 1.85;
+      color: var(--text-soft);
+    }
+
+    /* =========================================================
+       6. CARTES / CARROUSELS
+    ========================================================== */
+    .dark-section { background: var(--dark); color: white; }
+    .cream { background: var(--cream); }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 56px;
+    }
+
+    .section-head .intro {
+      max-width: 440px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .cream .section-head .intro { color: var(--muted); }
+
+    .slider-wrap { position: relative; }
+
+    .slider {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 18px;
+      scrollbar-width: none;
+    }
+
+    .slider::-webkit-scrollbar { display: none; }
+
+    .card {
+      min-width: 340px;
+      max-width: 340px;
+      scroll-snap-align: start;
+      border-radius: 32px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.25s ease;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+    }
+
+    .card:hover { transform: translateY(-5px); }
+    .dark-card { background: var(--card-dark); color: white; }
+    .light-card { background: white; color: var(--dark); }
+
+    .card-img {
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .exploration-card .card-img { height: 320px; }
+
+    .card-img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: 0.7s ease;
+    }
+
+    .card:hover img { transform: scale(1.05); }
+
+    .card-body { padding: 28px; }
+
+    .meta {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+    }
+
+    .light-card .meta { color: var(--brown); }
+
+    .type {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      color: rgba(255,255,255,0.45);
+      margin-top: 8px;
+    }
+
+    .light-card .type { color: #8A8073; }
+
+    .desc {
+      margin: 22px 0 0;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .light-card .desc { color: #5C544B; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .tag-light {
+      border-color: rgba(0,0,0,0.1);
+      color: #5C544B;
+      background: white;
+    }
+
+    .card-link {
+      margin-top: 28px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+    }
+
+    .light-card .card-link { color: var(--brown); }
+
+    .arrow {
+      position: absolute;
+      top: 40px;
+      z-index: 5;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(255,255,255,0.95);
+      font-size: 26px;
+      color: var(--dark);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+
+    .arrow.left { left: 16px; }
+    .arrow.right { right: 16px; }
+
+    /* =========================================================
+       7. APPROCHE / OUTILS / CITATION
+    ========================================================== */
+    .strengths {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .strength {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 32px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    }
+
+    .strength .icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      border-radius: 999px;
+      background: #F3E8D8;
+      border: 1px solid rgba(139,111,71,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .tools-section { background: var(--cream-2); }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .tool {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-size: 14px;
+      letter-spacing: 0.07em;
+      color: var(--text-soft);
+    }
+
+    .quote {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    .quote::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+    }
+
+    .quote .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .quote h2 { font-size: clamp(2.6rem, 6vw, 5.5rem); }
+
+    .quote p {
+      margin: 30px auto 0;
+      max-width: 720px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+      font-size: 18px;
+    }
+
+    /* =========================================================
+       8. FOOTER / CONTACT
+    ========================================================== */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 56px 24px;
+    }
+
+    .footer-title { font-size: 2rem; font-weight: 700; }
+    .footer-subtitle { color: var(--muted); margin-top: 8px; }
+
+    .socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .social {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       9. MODALES
+    ========================================================== */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      overflow-y: auto;
+      padding: 40px 16px;
+    }
+
+    .modal.active { display: block; }
+
+    .modal-card {
+      max-width: 1000px;
+      margin: auto;
+      background: var(--bg);
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+    }
+
+    .modal-hero {
+      height: 420px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .modal-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.72), rgba(0,0,0,0.2), transparent);
+    }
+
+    .close {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(255,255,255,0.9);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .modal-title {
+      position: absolute;
+      z-index: 2;
+      left: 40px;
+      bottom: 34px;
+      right: 40px;
+    }
+
+    .modal-title h2 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.9;
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 64px;
+      padding: 56px 48px;
+    }
+
+    .modal-body .big {
+      font-size: 24px;
+      line-height: 1.7;
+      color: #3F392F;
+    }
+
+    .modal-section {
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 28px;
+      margin-bottom: 42px;
+    }
+
+    .modal-section p {
+      line-height: 1.8;
+      color: #5C544B;
+    }
+
+    .modal iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .highlight {
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      color: #3F392F;
+    }
+
+    .contact-modal .modal-card { max-width: 760px; }
+
+    .contact-head {
+      background: var(--dark);
+      color: white;
+      padding: 48px;
+    }
+
+    .contact-head p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 22px;
+      padding: 40px 48px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+      color: #5C544B;
+    }
+
+    input, textarea {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 18px;
+      background: white;
+      padding: 15px 18px;
+      font: inherit;
+      color: var(--dark);
+    }
+
+    textarea { resize: none; }
+
+    .submit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* =========================================================
+       10. MOBILE
+    ========================================================== */
+    @media (max-width: 850px) {
+      .nav { display: none; }
+      .profile-grid, .modal-body { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head .intro { margin-top: 20px; }
+      .strengths { grid-template-columns: 1fr; }
+      .footer { display: block; }
+      .form-grid { grid-template-columns: 1fr; }
+      .portrait img { height: 520px; }
+      .card { min-width: 82vw; max-width: 82vw; }
+      .arrow { display: none; }
+      .hero-content { padding-top: 80px; }
+      .modal-title { left: 24px; bottom: 24px; }
+      .modal-body { padding: 40px 26px; }
+      .contact-head, .contact-form { padding: 34px 26px; }
+    }
   </style>
 </head>
+
 <body>
-  <header class="header"><div class="container header-inner"><a href="#top" class="logo">Corentin RÉGNIER</a><nav class="nav"><a href="#profil">Profil</a><a href="#projets">Projets</a><a href="#approche">Approche</a><a href="#contact">Contact</a></nav></div></header>
+  <!-- =========================================================
+       STRUCTURE HTML
+       En principe, tu n'as presque jamais besoin de modifier cette partie.
+       Modifie plutôt les textes/images dans la section JavaScript "DONNÉES".
+  ========================================================== -->
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">Corentin RÉGNIER</a>
+      <nav class="nav">
+        <a href="#profil">Profil</a>
+        <a href="#projets">Projets</a>
+        <a href="#approche">Approche</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <main id="top">
-    <section class="hero"><img src="images/maroc_bike_hd.png" class="hero-bg" alt="Paysage naturel"><div class="container"><div class="hero-content"><p class="eyebrow">Tourisme • itinérance • expériences outdoor</p><h1>Concevoir des expériences outdoor visibles, lisibles et désirables.</h1><p class="lead">Chef de projet digital spécialisé tourisme, entre exploration terrain, conception d’itinéraires et valorisation des expériences touristiques.</p><div class="btn-row"><a class="btn btn-light" href="#projets">Voir les projets →</a><button class="btn btn-outline" onclick="openContact()">Me contacter</button></div></div></div></section>
-    <section id="profil"><div class="container profile-grid"><div class="portrait"><img src="images/photo_profil_3.png" alt="Portrait outdoor"><div class="portrait-text"><p>Outdoor • itinérance • territoire</p><p>Une approche pensée depuis le terrain.</p></div></div><div><p class="eyebrow">Profil</p><h2>Un profil hybride entre terrain, itinérance et stratégie touristique.</h2><div class="profile-copy"><p>Mon rôle : concevoir, structurer et valoriser des expériences de voyage cohérentes, attractives et pensées pour le terrain.</p><p>Je combine exploration terrain, culture outdoor, gestion de projet touristique, conception d’itinéraires et outils digitaux pour mieux raconter et développer des destinations, activités et expériences de voyage.</p></div></div></div></section>
-    <section id="projets" class="dark-section"><div class="container"><div class="section-head"><div><p class="eyebrow" style="color:var(--gold)">Sélection</p><h2>Projets & expériences</h2></div><p>Une preuve par le terrain : tourisme, vélo, itinérance, territoire, digital.</p></div><div class="slider-wrap"><button class="arrow left" onclick="scrollById('projectsSlider',-420)">←</button><button class="arrow right" onclick="scrollById('projectsSlider',420)">→</button><div id="projectsSlider" class="slider"></div></div></div></section>
-    <section id="explorations" class="cream"><div class="container"><div class="section-head"><div><p class="eyebrow">Explorations terrain</p><h2>Le terrain comme laboratoire d’expérience.</h2></div><p>Des expériences personnelles choisies pour nourrir une compréhension réelle du voyage actif, de l’itinérance et des usages outdoor.</p></div><div class="slider-wrap"><button class="arrow left" onclick="scrollById('explorationsSlider',-420)">←</button><button class="arrow right" onclick="scrollById('explorationsSlider',420)">→</button><div id="explorationsSlider" class="slider exploration"></div></div></div></section>
-    <section id="approche"><div class="container"><div id="strengths" class="strengths"></div></div></section>
-    <section class="cream"><div class="container" style="text-align:center"><p class="eyebrow">Outils</p><h2>Une boîte à outils au service de l’expérience touristique.</h2><div id="tools" class="tools"></div></div></section>
-    <section class="quote"><img src="images/afrique-du-sud.png" class="image-bg" alt="Montagnes"><div class="container"><h2>Comprendre un territoire,<br>puis transformer cette lecture<br>en expérience de voyage cohérente.</h2><p>Terrain, itinérance, expérience voyage, contenus et outils digitaux : c’est cette approche hybride que je souhaite mettre au service d’acteurs du voyage actif premium, des expériences outdoor et du tourisme sur-mesure.</p></div></section>
+    <section class="hero">
+      <img src="images/maroc_bike_hd.png" class="hero-bg" alt="Voyage à vélo au Maroc">
+      <div class="container hero-content">
+        <p class="eyebrow">Tourisme • itinérance • expériences outdoor</p>
+        <h1>Concevoir des expériences outdoor visibles, lisibles et désirables.</h1>
+        <p class="lead">Concepteur de voyages et chef de projet tourisme outdoor, entre exploration terrain, création d’itinéraires et valorisation des expériences touristiques.</p>
+        <div class="btn-row">
+          <a href="#projets" class="btn btn-light">Voir les projets →</a>
+          <button class="btn btn-outline" type="button" onclick="openContact()">Me contacter</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="container profile-grid">
+        <div class="portrait">
+          <img src="images/photo_profil_3.png" alt="Portrait outdoor de Corentin Régnier">
+          <div class="portrait-text">
+            <p class="small">Outdoor • itinérance • territoire</p>
+            <p class="big">Une approche pensée depuis le terrain.</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow">Profil</p>
+          <h2>Un profil hybride entre terrain, itinérance et stratégie touristique.</h2>
+          <div class="profile-copy">
+            <p>Mon rôle : concevoir, structurer et valoriser des expériences de voyage cohérentes, attractives et pensées pour le terrain.</p>
+            <p>Je combine exploration terrain, culture outdoor, gestion de projet touristique, conception d’itinéraires et outils digitaux pour mieux raconter et développer des destinations, activités et expériences de voyage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="dark-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Sélection</p>
+            <h2>Projets & expériences</h2>
+          </div>
+          <p class="intro">Une preuve par le terrain : tourisme, vélo, itinérance, territoire, digital.</p>
+        </div>
+
+        <div class="slider-wrap">
+          <button class="arrow left" type="button" onclick="scrollSlider('projectsSlider', -420)">←</button>
+          <button class="arrow right" type="button" onclick="scrollSlider('projectsSlider', 420)">→</button>
+          <div id="projectsSlider" class="slider"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explorations" class="cream">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Explorations terrain</p>
+            <h2>Le terrain comme laboratoire d’expérience.</h2>
+          </div>
+          <p class="intro">Des expériences personnelles choisies pour nourrir une compréhension réelle du voyage actif, de l’itinérance et des usages outdoor.</p>
+        </div>
+
+        <div class="slider-wrap">
+          <button class="arrow left" type="button" onclick="scrollSlider('explorationsSlider', -420)">←</button>
+          <button class="arrow right" type="button" onclick="scrollSlider('explorationsSlider', 420)">→</button>
+          <div id="explorationsSlider" class="slider"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approche">
+      <div class="container">
+        <div id="strengths" class="strengths"></div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <div class="container" style="text-align:center;">
+        <p class="eyebrow">Outils</p>
+        <h2>Une boîte à outils au service de l’expérience touristique.</h2>
+        <div id="tools" class="tools"></div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <img src="images/afrique-du-sud.png" class="quote-bg" alt="Montagnes et itinérance">
+      <div class="container">
+        <h2>Comprendre un territoire,<br>puis transformer cette lecture<br>en expérience de voyage cohérente.</h2>
+        <p>Terrain, itinérance, expérience voyage, contenus et outils digitaux : c’est cette approche hybride que je souhaite mettre au service d’acteurs du voyage actif premium, des expériences outdoor et du tourisme sur-mesure.</p>
+      </div>
+    </section>
   </main>
-  <footer id="contact" class="container footer"><div><p class="serif" style="font-size:28px;font-weight:700;margin-bottom:8px">Corentin RÉGNIER</p><p style="color:var(--muted)">Chef de projet digital spécialisé tourisme & outdoor.</p><div class="socials"><a class="social" href="https://www.linkedin.com/in/corentin-r%C3%A9gnier-48331259/?locale=en" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a class="social" href="https://www.strava.com/athletes/82685781" target="_blank" rel="noopener noreferrer" aria-label="Strava">△</a></div></div><button class="btn btn-dark" onclick="openContact()">Discuter d’une opportunité</button></footer>
-  <div id="detailModal" class="modal"><div class="modal-card"><div class="modal-hero"><img id="modalImage" src="" alt=""><button class="close" onclick="closeModal('detailModal')">✕</button><div class="modal-title"><p id="modalMeta" class="eyebrow" style="color:rgba(255,255,255,.75)"></p><h2 id="modalTitle"></h2><p id="modalType" class="type"></p></div></div><div class="modal-body"><div><p class="eyebrow">Présentation</p><p id="modalLong" class="big"></p><div id="modalTags" class="tags"></div><div id="modalMap"></div><div id="modalHighlights" class="highlight-grid"></div></div><div id="modalSections"></div></div></div></div>
-  <div id="contactModal" class="modal contact-modal"><div class="modal-card"><button class="close" onclick="closeModal('contactModal')">✕</button><div class="contact-head"><p class="eyebrow" style="color:var(--gold)">Contact</p><h2>Discuter d’une opportunité.</h2><p>Projet touristique, mission digitale, expérience outdoor ou collaboration éditoriale : envoyez-moi quelques lignes pour ouvrir la discussion.</p></div><form action="https://formspree.io/f/xqenwdej" method="POST" class="contact-form"><input type="text" name="_gotcha" style="display:none"><div class="form-grid"><label>Nom<input type="text" name="name" required placeholder="Votre nom"></label><label>Email<input type="email" name="email" required placeholder="votre@email.com"></label></div><label>Message<textarea name="message" required rows="6" placeholder="Expliquez brièvement votre projet, votre besoin ou l’opportunité à discuter."></textarea></label><div class="submit-row"><p style="color:var(--muted);font-size:14px">Réponse par email.</p><button class="btn btn-dark" type="submit">Envoyer le message</button></div></form></div></div>
+
+  <footer id="contact" class="container footer">
+    <div>
+      <p class="footer-title serif">Corentin RÉGNIER</p>
+      <p class="footer-subtitle">Concepteur de voyages & chef de projet tourisme outdoor.</p>
+      <div class="socials">
+        <a class="social" href="https://www.linkedin.com/in/corentin-r%C3%A9gnier-48331259/?locale=en" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a class="social" href="https://www.strava.com/athletes/82685781" target="_blank" rel="noopener noreferrer" aria-label="Strava">S</a>
+      </div>
+    </div>
+    <button class="btn btn-dark" type="button" onclick="openContact()">Discuter d’une opportunité</button>
+  </footer>
+
+  <!-- Modale projet / exploration -->
+  <div id="detailModal" class="modal">
+    <div class="modal-card">
+      <div class="modal-hero">
+        <img id="modalImage" src="" alt="">
+        <button class="close" type="button" onclick="closeModal('detailModal')">✕</button>
+        <div class="modal-title">
+          <p id="modalMeta" class="meta"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalType" class="type"></p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <p class="eyebrow">Présentation</p>
+          <p id="modalLong" class="big"></p>
+          <div id="modalTags" class="tags"></div>
+          <div id="modalMap"></div>
+          <div id="modalHighlights" class="highlight-grid"></div>
+        </div>
+        <div id="modalSections"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale contact -->
+  <div id="contactModal" class="modal contact-modal">
+    <div class="modal-card">
+      <button class="close" type="button" onclick="closeModal('contactModal')">✕</button>
+      <div class="contact-head">
+        <p class="eyebrow" style="color: var(--gold);">Contact</p>
+        <h2>Discuter d’une opportunité.</h2>
+        <p>Projet touristique, mission, expérience outdoor ou collaboration : envoyez-moi quelques lignes pour ouvrir la discussion.</p>
+      </div>
+
+      <form action="https://formspree.io/f/xqenwdej" method="POST" class="contact-form">
+        <input type="text" name="_gotcha" style="display:none;">
+        <div class="form-grid">
+          <label>Nom
+            <input type="text" name="name" required placeholder="Votre nom">
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="votre@email.com">
+          </label>
+        </div>
+        <label>Message
+          <textarea name="message" required rows="6" placeholder="Expliquez brièvement votre projet, votre besoin ou l’opportunité à discuter."></textarea>
+        </label>
+        <div class="submit-row">
+          <p style="color: var(--muted);">Réponse par email.</p>
+          <button type="submit" class="btn btn-dark">Envoyer le message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script>
-    const projects=[{title:"Michelin / MyTripTailor",type:"Voyage sur mesure & contenus touristiques",place:"France / Europe",text:"Conception d’itinéraires multi-activités, coordination de projets touristiques et création de contenus autour de l’expérience voyage.",tags:["Itinérance","Contenus","Projet digital"],image:"images/loire-a-velo.png",longDescription:"Expérience autour de la conception de voyages et d’itinéraires touristiques mêlant contenus, coordination et expérience utilisateur dans l’univers du voyage sur mesure.",sections:[{title:"Conception",text:"Création d’itinéraires et expériences pensées pour différents profils de voyageurs, entre logique terrain, contenus et fluidité de parcours."},{title:"Expérience voyage",text:"Travail autour de l’expérience utilisateur, de la cohérence des parcours et de la valorisation de destinations et activités touristiques."}]},{title:"Sun-E-Bike Provence",type:"Cyclotourisme & expérience client",place:"Alpilles • Provence",text:"Conception d’expériences cyclotouristiques en Provence : accueil voyageurs, itinéraires, lecture terrain et valorisation du territoire à vélo.",tags:["Cyclotourisme","Terrain","SEO local"],image:"images/sun-e-bike.png",longDescription:"Expérience terrain dans le cyclotourisme en Provence mêlant relation voyageurs, conception d’itinéraires, compréhension des usages outdoor et valorisation d’un territoire à travers le vélo.",sections:[{title:"Terrain & itinérance",text:"Accompagnement de voyageurs à vélo dans les Alpilles et le Luberon, avec une attention particulière portée aux parcours, aux rythmes et à l’expérience réelle du terrain."},{title:"Expérience cyclotouristique",text:"Réflexion autour de la fluidité des parcours, de la lecture du territoire et de la manière dont le vélo transforme l’expérience de découverte locale."}]},{title:"Reunion Aventure",type:"Cartographie touristique interactive",place:"Île de La Réunion",text:"Structurer l’offre outdoor d’un territoire volcanique : itinéraires, points d’intérêt, contraintes géographiques, expériences locales.",tags:["Cartographie","Outdoor","UX touristique"],image:"images/reunion-aventure.png",longDescription:"Projet personnel de cartographie touristique immersive pensé pour mieux raconter les territoires de La Réunion : itinéraires, expériences outdoor, points d’intérêt et lecture du relief.",sections:[{title:"Vision",text:"Créer une plateforme éditoriale et cartographique capable de rendre le territoire plus lisible, inspirant et cohérent pour des voyageurs en recherche d’expériences outdoor."},{title:"Approche",text:"Travail autour de la lecture du relief, des itinéraires et des dynamiques de mobilité touristique."}]},{title:"Ville de La Possession",type:"Développement territorial",place:"Île de La Réunion",text:"Pilotage de projets liés aux mobilités actives, à l’expérience usager et à la valorisation des déplacements doux sur le territoire.",tags:["Territoire","Mobilités","Expérience usager"],image:"images/possession.png",longDescription:"Pilotage de projets territoriaux autour des mobilités actives et de l’expérience des usagers, avec une réflexion sur les usages, les déplacements et la lecture du territoire.",sections:[{title:"Territoire",text:"Travail sur les infrastructures, les usages et les logiques de déplacement à l’échelle d’un territoire réunionnais en forte évolution."},{title:"Mobilité & expérience",text:"Approche centrée sur les mobilités douces, l’accessibilité et l’expérience quotidienne des habitants et visiteurs."}]}];
-    const explorations=[{title:"Voyage vélo au Maroc",subtitle:"Micro-aventure & itinérance",description:"Exploration du Maroc à vélo pour comprendre les dynamiques du voyage lent, l’autonomie terrain et l’expérience utilisateur en itinérance.",image:"images/maroc.jpg",meta:"Maroc • Bikepacking • Terrain",longDescription:"Une expérience d’itinérance à vélo pour explorer concrètement les enjeux du voyage lent : autonomie, rythme, orientation, adaptation et lecture du territoire.",mapEmbed:'<iframe src="https://www.komoot.com/fr-fr/tour/602597281/embed?share_token=anMEBPeDhbmI6kUW6jWM2olniCWvnoAkuEJJoU4W7G10QCmdt8&layout=compact" width="100%" height="320" frameborder="0" scrolling="no"></iframe>',highlights:["Navigation & autonomie terrain","Gestion du rythme et de l’effort","Lecture du territoire","Voyage lent & expérience utilisateur"],insight:"Une immersion terrain pour mieux comprendre les logiques d’itinérance, les contraintes réelles du voyage actif et les attentes des voyageurs outdoor."},{title:"Trail & vélo à La Réunion",subtitle:"Lecture du territoire",description:"Pratique régulière du trail et exploration des reliefs réunionnais pour développer une compréhension concrète des contraintes géographiques et des usages outdoor.",image:"images/gravel-reunion.png",meta:"La Réunion • Trail • Relief",longDescription:"Une pratique régulière du trail sur les reliefs réunionnais pour développer une lecture concrète de la montagne tropicale, des accès et des contraintes terrain.",sections:[{title:"Lecture du relief",text:"Observer comment le dénivelé, la chaleur, les sentiers, les accès et la météo influencent directement l’expérience outdoor."},{title:"Culture outdoor",text:"Une pratique vécue qui renforce la crédibilité terrain dans la conception d’itinéraires et d’expériences touristiques actives."}]},{title:"Cyclotourisme en France",subtitle:"Itinérance & expérience de territoire",description:"Exploration de grands itinéraires cyclables français pour comprendre l’expérience du voyage à vélo, la lecture des territoires et les usages de l’itinérance.",image:"images/bike_road_alpilles.png",meta:"Cyclotourisme • Itinérance",longDescription:"Une exploration de différents itinéraires cyclables français — Loire à Vélo, ViaRhôna, Bretagne, Alpes, Provence ou Camargue — pour développer une compréhension concrète du voyage itinérant à vélo.",sections:[{title:"Mobilité",text:"Observer comment les infrastructures, les paysages, les étapes, le relief et les rythmes de déplacement influencent directement l’expérience du voyage à vélo et la perception d’un territoire."},{title:"Expérience locale",text:"Comprendre comment le cyclotourisme transforme le déplacement en expérience immersive, entre découverte locale, autonomie, lenteur et lecture du terrain."}]},{title:"Voyages moto en Asie",subtitle:"Aventure & autonomie terrain",description:"Immersion en montagne pour développer une compréhension concrète des logiques outdoor : effort, refuge, météo, accessibilité et expérience terrain.",image:"images/asie-moto.png",meta:"Asie • Moto • Itinérance",longDescription:"Plusieurs voyages à moto au Sri Lanka, en Inde, au Laos, au Cambodge et au Vietnam pour explorer des territoires par la route, comprendre les réalités du voyage itinérant et développer une forte capacité d’adaptation terrain.",sections:[{title:"Itinérance",text:"Navigation, gestion de l’imprévu, longues distances, météo, sécurité, fatigue et logistique quotidienne : une approche du voyage fondée sur l’autonomie et l’expérience vécue du terrain."},{title:"Expérience voyage",text:"Comprendre ce qui transforme un itinéraire en expérience mémorable : rythme, paysages, rencontres, hébergements, pauses, dynamique de groupe et immersion culturelle."}]}];
-    const strengths=[{icon:"🧭",title:"Conception d’expériences",text:"Transformer un territoire en expérience fluide, cohérente et attractive."},{icon:"⛰️",title:"Lecture du terrain",text:"Relief, accès, distances, saisonnalité, niveau sportif et logistique terrain."},{icon:"✦",title:"Valorisation digitale",text:"Contenus, cartographie et outils digitaux au service de l’expérience touristique."},{icon:"🚴",title:"Culture outdoor",text:"Vélo, trail, randonnée, voyage actif : une pratique vécue sur le terrain."}];
-    const tools=["Conception d’itinéraires","Cartographie touristique","Itinérance & mobilité douce","Expérience outdoor","Storytelling destination","UX voyage","Micro-aventure","QGIS"];
-    function esc(s){return String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
-    function renderCards(){document.getElementById('projectsSlider').innerHTML=projects.map((p,i)=>`<article class="card dark-card" onclick="openDetail('project',${i})"><div class="card-img"><img src="${p.image}" alt="${esc(p.title)}"></div><div class="card-body"><p class="meta">${esc(p.place)}</p><h3>${esc(p.title)}</h3><p class="type">${esc(p.type)}</p><p class="desc">${esc(p.text)}</p><div class="tags">${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="dark-link">Découvrir le projet →</div></div></article>`).join('');document.getElementById('explorationsSlider').innerHTML=explorations.map((e,i)=>`<article class="card light-card" onclick="openDetail('exploration',${i})"><div class="card-img"><img src="${e.image}" alt="${esc(e.title)}"></div><div class="card-body"><p class="meta">${esc(e.meta)}</p><h3>${esc(e.title)}</h3><p class="type">${esc(e.subtitle)}</p><p class="desc">${esc(e.description)}</p><div class="light-link">Découvrir l’exploration →</div></div></article>`).join('');document.getElementById('strengths').innerHTML=strengths.map(s=>`<div class="strength"><div class="icon">${s.icon}</div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join('');document.getElementById('tools').innerHTML=tools.map(t=>`<div class="tool">${esc(t)}</div>`).join('')}
-    function scrollById(id,x){document.getElementById(id).scrollBy({left:x,behavior:'smooth'})}
-    function openDetail(type,i){const item=type==='project'?projects[i]:explorations[i];document.getElementById('modalImage').src=item.image;document.getElementById('modalImage').alt=item.title;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalMeta').textContent=item.place||item.meta||'';document.getElementById('modalType').textContent=item.type||item.subtitle||'';document.getElementById('modalLong').textContent=item.longDescription||'';document.getElementById('modalTags').innerHTML=(item.tags||[]).map(t=>`<span class="tag" style="border-color:rgba(0,0,0,.1);color:#5C544B;background:white">${esc(t)}</span>`).join('');document.getElementById('modalMap').innerHTML=item.mapEmbed?`<div style="margin-top:36px">${item.mapEmbed}</div>`:'';document.getElementById('modalHighlights').innerHTML=(item.highlights||[]).map(h=>`<div class="highlight">${esc(h)}</div>`).join('');document.getElementById('modalSections').innerHTML=(item.sections||[]).map(s=>`<div class="modal-section"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join('');document.getElementById('detailModal').classList.add('active');document.body.style.overflow='hidden'}
-    function closeModal(id){document.getElementById(id).classList.remove('active');document.body.style.overflow=''}
-    function openContact(){document.getElementById('contactModal').classList.add('active');document.body.style.overflow='hidden'}
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('detailModal');closeModal('contactModal')}});
-    document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id)}));
+    /* =========================================================
+       11. DONNÉES FACILES À MODIFIER
+       C'est ici que tu modifies tes projets, explorations, compétences et outils.
+       Ne touche pas au code plus bas sauf besoin technique.
+    ========================================================== */
+
+    const projects = [
+      {
+        title: "Michelin / MyTripTailor",
+        type: "Voyage sur mesure & contenus touristiques",
+        place: "France / Europe",
+        text: "Conception d’itinéraires multi-activités, coordination de projets touristiques et création de contenus autour de l’expérience voyage.",
+        image: "images/loire-a-velo.png",
+        tags: ["Itinérance", "Contenus", "Projet digital"],
+        longDescription: "Expérience autour de la conception de voyages et d’itinéraires touristiques mêlant contenus, coordination et expérience utilisateur dans l’univers du voyage sur mesure.",
+        sections: [
+          {
+            title: "Conception",
+            text: "Création d’itinéraires et expériences pensées pour différents profils de voyageurs, entre logique terrain, contenus et fluidité de parcours."
+          },
+          {
+            title: "Expérience voyage",
+            text: "Travail autour de l’expérience utilisateur, de la cohérence des parcours et de la valorisation de destinations et activités touristiques."
+          }
+        ]
+      },
+      {
+        title: "Sun-E-Bike Provence",
+        type: "Cyclotourisme & expérience client",
+        place: "Alpilles • Provence",
+        text: "Conception d’expériences cyclotouristiques en Provence : accueil voyageurs, itinéraires, lecture terrain et valorisation du territoire à vélo.",
+        image: "images/sun-e-bike.png",
+        tags: ["Cyclotourisme", "Terrain", "SEO local"],
+        longDescription: "Expérience terrain dans le cyclotourisme en Provence mêlant relation voyageurs, conception d’itinéraires, compréhension des usages outdoor et valorisation d’un territoire à travers le vélo.",
+        sections: [
+          {
+            title: "Terrain & itinérance",
+            text: "Accompagnement de voyageurs à vélo dans les Alpilles et le Luberon, avec une attention particulière portée aux parcours, aux rythmes et à l’expérience réelle du terrain."
+          },
+          {
+            title: "Expérience cyclotouristique",
+            text: "Réflexion autour de la fluidité des parcours, de la lecture du territoire et de la manière dont le vélo transforme l’expérience de découverte locale."
+          }
+        ]
+      },
+      {
+        title: "Reunion Aventure",
+        type: "Cartographie touristique interactive",
+        place: "Île de La Réunion",
+        text: "Structurer l’offre outdoor d’un territoire volcanique : itinéraires, points d’intérêt, contraintes géographiques, expériences locales.",
+        image: "images/reunion-aventure.png",
+        tags: ["Cartographie", "Outdoor", "UX touristique"],
+        longDescription: "Projet personnel de cartographie touristique immersive pensé pour mieux raconter les territoires de La Réunion : itinéraires, expériences outdoor, points d’intérêt et lecture du relief.",
+        sections: [
+          {
+            title: "Vision",
+            text: "Créer une plateforme éditoriale et cartographique capable de rendre le territoire plus lisible, inspirant et cohérent pour des voyageurs en recherche d’expériences outdoor."
+          },
+          {
+            title: "Approche",
+            text: "Travail autour de la lecture du relief, des itinéraires et des dynamiques de mobilité touristique."
+          }
+        ]
+      },
+      {
+        title: "Ville de La Possession",
+        type: "Développement territorial",
+        place: "Île de La Réunion",
+        text: "Pilotage de projets liés aux mobilités actives, à l’expérience usager et à la valorisation des déplacements doux sur le territoire.",
+        image: "images/possession.png",
+        tags: ["Territoire", "Mobilités", "Expérience usager"],
+        longDescription: "Pilotage de projets territoriaux autour des mobilités actives et de l’expérience des usagers, avec une réflexion sur les usages, les déplacements et la lecture du territoire.",
+        sections: [
+          {
+            title: "Territoire",
+            text: "Travail sur les infrastructures, les usages et les logiques de déplacement à l’échelle d’un territoire réunionnais en forte évolution."
+          },
+          {
+            title: "Mobilité & expérience",
+            text: "Approche centrée sur les mobilités douces, l’accessibilité et l’expérience quotidienne des habitants et visiteurs."
+          }
+        ]
+      }
+    ];
+
+    const explorations = [
+      {
+        title: "Voyage vélo au Maroc",
+        subtitle: "Micro-aventure & itinérance",
+        meta: "Maroc • Bikepacking • Terrain",
+        description: "Exploration du Maroc à vélo pour comprendre les dynamiques du voyage lent, l’autonomie terrain et l’expérience utilisateur en itinérance.",
+        image: "images/maroc.jpg",
+        longDescription: "Une expérience d’itinérance à vélo pour explorer concrètement les enjeux du voyage lent : autonomie, rythme, orientation, adaptation et lecture du territoire.",
+        mapEmbed: `<iframe src="https://www.komoot.com/fr-fr/tour/602597281/embed?share_token=anMEBPeDhbmI6kUW6jWM2olniCWvnoAkuEJJoU4W7G10QCmdt8&layout=compact" width="100%" height="320" frameborder="0" scrolling="no"></iframe>`,
+        highlights: [
+          "Navigation & autonomie terrain",
+          "Gestion du rythme et de l’effort",
+          "Lecture du territoire",
+          "Voyage lent & expérience utilisateur"
+        ],
+        sections: []
+      },
+      {
+        title: "Trail & vélo à La Réunion",
+        subtitle: "Lecture du territoire",
+        meta: "La Réunion • Trail • Relief",
+        description: "Pratique régulière du trail et exploration des reliefs réunionnais pour développer une compréhension concrète des contraintes géographiques et des usages outdoor.",
+        image: "images/gravel-reunion.png",
+        longDescription: "Une pratique régulière du trail sur les reliefs réunionnais pour développer une lecture concrète de la montagne tropicale, des accès et des contraintes terrain.",
+        sections: [
+          {
+            title: "Lecture du relief",
+            text: "Observer comment le dénivelé, la chaleur, les sentiers, les accès et la météo influencent directement l’expérience outdoor."
+          },
+          {
+            title: "Culture outdoor",
+            text: "Une pratique vécue qui renforce la crédibilité terrain dans la conception d’itinéraires et d’expériences touristiques actives."
+          }
+        ]
+      },
+      {
+        title: "Cyclotourisme en France",
+        subtitle: "Itinérance & expérience de territoire",
+        meta: "Cyclotourisme • Itinérance",
+        description: "Exploration de grands itinéraires cyclables français pour comprendre l’expérience du voyage à vélo, la lecture des territoires et les usages de l’itinérance.",
+        image: "images/bike_road_alpilles.png",
+        longDescription: "Une exploration de différents itinéraires cyclables français — Loire à Vélo, ViaRhôna, Bretagne, Alpes, Provence ou Camargue — pour développer une compréhension concrète du voyage itinérant à vélo.",
+        sections: [
+          {
+            title: "Mobilité",
+            text: "Observer comment les infrastructures, les paysages, les étapes, le relief et les rythmes de déplacement influencent directement l’expérience du voyage à vélo et la perception d’un territoire."
+          },
+          {
+            title: "Expérience locale",
+            text: "Comprendre comment le cyclotourisme transforme le déplacement en expérience immersive, entre découverte locale, autonomie, lenteur et lecture du terrain."
+          }
+        ]
+      },
+      {
+        title: "Voyages moto en Asie",
+        subtitle: "Aventure & autonomie terrain",
+        meta: "Asie • Moto • Itinérance",
+        description: "Voyages itinérants à moto pour développer une compréhension concrète des logiques d’autonomie, d’adaptation et d’expérience terrain.",
+        image: "images/asie-moto.png",
+        longDescription: "Plusieurs voyages à moto au Sri Lanka, en Inde, au Laos, au Cambodge et au Vietnam pour explorer des territoires par la route, comprendre les réalités du voyage itinérant et développer une forte capacité d’adaptation terrain.",
+        sections: [
+          {
+            title: "Itinérance",
+            text: "Navigation, gestion de l’imprévu, longues distances, météo, sécurité, fatigue et logistique quotidienne : une approche du voyage fondée sur l’autonomie et l’expérience vécue du terrain."
+          },
+          {
+            title: "Expérience voyage",
+            text: "Comprendre ce qui transforme un itinéraire en expérience mémorable : rythme, paysages, rencontres, hébergements, pauses, dynamique de groupe et immersion culturelle."
+          }
+        ]
+      }
+    ];
+
+    const strengths = [
+      {
+        icon: "🧭",
+        title: "Conception d’expériences",
+        text: "Transformer un territoire en expérience fluide, cohérente et attractive."
+      },
+      {
+        icon: "⛰️",
+        title: "Lecture du terrain",
+        text: "Relief, accès, distances, saisonnalité, niveau sportif et logistique terrain."
+      },
+      {
+        icon: "✦",
+        title: "Valorisation digitale",
+        text: "Contenus, cartographie et outils digitaux au service de l’expérience touristique."
+      },
+      {
+        icon: "🚴",
+        title: "Culture outdoor",
+        text: "Vélo, trail, randonnée, voyage actif : une pratique vécue sur le terrain."
+      }
+    ];
+
+    const tools = [
+      "Conception d’itinéraires",
+      "Cartographie touristique",
+      "Itinérance & mobilité douce",
+      "Expérience outdoor",
+      "Storytelling destination",
+      "UX voyage",
+      "Micro-aventure",
+      "QGIS"
+    ];
+
+    /* =========================================================
+       12. CODE TECHNIQUE
+       Pas besoin de modifier cette partie pour changer le contenu du site.
+    ========================================================== */
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>\"]/g, function (character) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "\"": "&quot;"
+        }[character];
+      });
+    }
+
+    function renderCards() {
+      const projectsSlider = document.getElementById("projectsSlider");
+      const explorationsSlider = document.getElementById("explorationsSlider");
+      const strengthsContainer = document.getElementById("strengths");
+      const toolsContainer = document.getElementById("tools");
+
+      projectsSlider.innerHTML = projects.map(function(project, index) {
+        return `
+          <article class="card dark-card" onclick="openDetail('project', ${index})">
+            <div class="card-img">
+              <img src="${project.image}" alt="${escapeHtml(project.title)}">
+            </div>
+            <div class="card-body">
+              <p class="meta">${escapeHtml(project.place)}</p>
+              <h3>${escapeHtml(project.title)}</h3>
+              <p class="type">${escapeHtml(project.type)}</p>
+              <p class="desc">${escapeHtml(project.text)}</p>
+              <div class="tags">
+                ${project.tags.map(function(tag) { return `<span class="tag">${escapeHtml(tag)}</span>`; }).join("")}
+              </div>
+              <div class="card-link">Découvrir le projet →</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      explorationsSlider.innerHTML = explorations.map(function(exploration, index) {
+        return `
+          <article class="card light-card exploration-card" onclick="openDetail('exploration', ${index})">
+            <div class="card-img">
+              <img src="${exploration.image}" alt="${escapeHtml(exploration.title)}">
+            </div>
+            <div class="card-body">
+              <p class="meta">${escapeHtml(exploration.meta)}</p>
+              <h3>${escapeHtml(exploration.title)}</h3>
+              <p class="type">${escapeHtml(exploration.subtitle)}</p>
+              <p class="desc">${escapeHtml(exploration.description)}</p>
+              <div class="card-link">Découvrir l’exploration →</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      strengthsContainer.innerHTML = strengths.map(function(strength) {
+        return `
+          <div class="strength">
+            <div class="icon">${strength.icon}</div>
+            <h3>${escapeHtml(strength.title)}</h3>
+            <p>${escapeHtml(strength.text)}</p>
+          </div>
+        `;
+      }).join("");
+
+      toolsContainer.innerHTML = tools.map(function(tool) {
+        return `<div class="tool">${escapeHtml(tool)}</div>`;
+      }).join("");
+    }
+
+    function scrollSlider(sliderId, distance) {
+      document.getElementById(sliderId).scrollBy({ left: distance, behavior: "smooth" });
+    }
+
+    function openDetail(type, index) {
+      const item = type === "project" ? projects[index] : explorations[index];
+
+      document.getElementById("modalImage").src = item.image;
+      document.getElementById("modalImage").alt = item.title;
+      document.getElementById("modalTitle").textContent = item.title;
+      document.getElementById("modalMeta").textContent = item.place || item.meta || "";
+      document.getElementById("modalType").textContent = item.type || item.subtitle || "";
+      document.getElementById("modalLong").textContent = item.longDescription || "";
+
+      document.getElementById("modalTags").innerHTML = (item.tags || []).map(function(tag) {
+        return `<span class="tag tag-light">${escapeHtml(tag)}</span>`;
+      }).join("");
+
+      document.getElementById("modalMap").innerHTML = item.mapEmbed ? `<div style="margin-top:36px;">${item.mapEmbed}</div>` : "";
+
+      document.getElementById("modalHighlights").innerHTML = (item.highlights || []).map(function(highlight) {
+        return `<div class="highlight">${escapeHtml(highlight)}</div>`;
+      }).join("");
+
+      document.getElementById("modalSections").innerHTML = (item.sections || []).map(function(section) {
+        return `
+          <div class="modal-section">
+            <h3>${escapeHtml(section.title)}</h3>
+            <p>${escapeHtml(section.text)}</p>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("detailModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function openContact() {
+      document.getElementById("contactModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeModal("detailModal");
+        closeModal("contactModal");
+      }
+    });
+
+    document.querySelectorAll(".modal").forEach(function(modal) {
+      modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+          closeModal(modal.id);
+        }
+      });
+    });
+
     renderCards();
   </script>
 </body>
