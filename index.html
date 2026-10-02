@@ -136,7 +136,7 @@
     .nav {
       display: flex;
       gap: 32px;
-      margin-right: 70px;
+      margin-right: 0;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.25em;
@@ -144,6 +144,24 @@
     }
 
     .nav a:hover { color: var(--dark); }
+
+    .header-actions { display: flex; align-items: center; gap: 24px; }
+    .header-socials { display: flex; align-items: center; gap: 4px; }
+    .header-socials .social { width: 40px; height: 40px; }
+    .header-socials .social svg { width: 22px; height: 22px; }
+
+    @media (min-width: 851px) and (max-width: 1050px) {
+      .nav { gap: 16px; letter-spacing: 0.12em; }
+      .header-actions { gap: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .header-inner { padding-left: 16px; padding-right: 16px; gap: 8px; }
+      .header .logo { font-size: 18px; gap: 8px; }
+      .header .logo img { width: 24px; height: 24px; }
+      .header-socials { gap: 0; }
+      .header-socials .social { width: 36px; height: 40px; }
+    }
 
     .logo {
     display: flex;
@@ -737,12 +755,18 @@
       <span>Corentin Régnier</span>
     </a>
 
+    <div class="header-actions">
     <nav class="nav">
       <a href="#profil">Profil</a>
       <a href="#projets">Projets</a>
       <a href="#approche">Compétences</a>
       <a href="#contact">Contact</a>
     </nav>
+      <div class="header-socials" aria-label="Profils sociaux">
+        <a class="social" href="https://www.linkedin.com/in/corentin-r%C3%A9gnier-48331259/?locale=en" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="30" height="30" fill="#0A66C2" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a class="social" href="https://www.strava.com/athletes/82685781" target="_blank" rel="noopener noreferrer" aria-label="Strava"><svg viewBox="0 0 24 24" width="32" height="32" fill="#FC4C02" aria-hidden="true" focusable="false"><path d="m15.387 17.944-2.089-4.116h-3.065L15.387 24l5.154-10.172h-3.066zm-4.928-9.716 2.836 5.6h4.176L10.459 0 3.459 13.828h4.172z"/></svg></a>
+            </div>
+    </div>
   </div>
 </header>
 
