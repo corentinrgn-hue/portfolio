@@ -359,6 +359,16 @@
     .card:hover img { transform: scale(1.05); }
 
     .card-body { padding: 28px; }
+    .project-logo {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .project-logo img { width: 120px; height: auto; }
+    .card:hover .project-logo img { transform: none; }
 
     .meta {
       font-size: 12px;
@@ -970,6 +980,7 @@
     const projects = [
       {
         title: "Guides Michelin / MyTripTailor",
+        logo: "images/mytriptailor-logo.svg",
         type: "Voyage sur mesure & contenus touristiques",
         place: "France / Europe",
         text: "Chef de projet digital et touristique en charge de la conception de voyages sur mesure pour MyTripTailor.",
@@ -1187,6 +1198,7 @@
             </div>
             <div class="card-body">
               <p class="meta">${escapeHtml(project.place)}</p>
+              ${project.logo ? `<div class="project-logo"><img src="${escapeHtml(project.logo)}" alt="Logo MyTripTailor" width="400" height="106" loading="lazy"></div>` : ""}
               <h3>${escapeHtml(project.title)}</h3>
               <p class="type">${escapeHtml(project.type)}</p>
               <p class="desc">${escapeHtml(project.text)}</p>
