@@ -1005,6 +1005,9 @@
       },
       {
         title: "Sun-E-Bike Provence",
+        logo: "images/sun-e-bike-logo.jpg",
+        logoWidth: 440,
+        logoHeight: 162,
         type: "Cyclotourisme & expérience client",
         place: "Alpilles • Provence",
         text: "Responsable d'une agence de cyclotourisme, en charge du développement de l'activité, de la relation client et de la conception d'itinéraires à vélo en Provence.",
@@ -1203,7 +1206,7 @@
             </div>
             <div class="card-body">
               <p class="meta">${escapeHtml(project.place)}</p>
-              ${project.logo ? `<div class="project-logo"><img src="${escapeHtml(project.logo)}" alt="Logo MyTripTailor" width="400" height="106" loading="lazy"></div>` : ""}
+              ${project.logo ? `<div class="project-logo"><img src="${escapeHtml(project.logo)}" alt="Logo ${escapeHtml(project.title)}" width="${project.logoWidth || 400}" height="${project.logoHeight || 106}" loading="lazy"></div>` : ""}
               <h3>${escapeHtml(project.title)}</h3>
               <p class="type">${escapeHtml(project.type)}</p>
               <p class="desc">${escapeHtml(project.text)}</p>
