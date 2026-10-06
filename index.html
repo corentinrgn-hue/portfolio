@@ -36,6 +36,14 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    main section, footer { scroll-margin-top: 92px; }
+    :where(a, button, input, textarea, [tabindex]):focus-visible {
+      outline: 3px solid #9B702D;
+      outline-offset: 5px;
+    }
+    .dark-section :where(a, button):focus-visible, .hero button:focus-visible,
+    .hero a:focus-visible { outline-color: #F3D397; }
+    .menu-toggle { display: none; }
 
     body {
       margin: 0;
@@ -159,7 +167,8 @@
       .header-inner { padding-left: 16px; padding-right: 16px; gap: 8px; }
       .header .logo { font-size: 18px; gap: 8px; }
       .header .logo img { width: 24px; height: 24px; }
-      .header-socials { gap: 0; }
+      .header-socials { display: none; }
+      .menu-toggle span { display: none; }
       .header-socials .social { width: 36px; height: 40px; }
     }
 
@@ -335,6 +344,7 @@
     .slider::-webkit-scrollbar { display: none; }
 
     .card {
+      position: relative;
       min-width: 340px;
       max-width: 340px;
       scroll-snap-align: start;
@@ -429,6 +439,13 @@
     }
 
     .card-link {
+      display: block;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      text-align: left;
+      cursor: pointer;
       margin-top: 28px;
       font-size: 13px;
       text-transform: uppercase;
@@ -436,6 +453,9 @@
       color: var(--gold);
     }
 
+    .card-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+    .card:focus-within { outline: 3px solid #F3D397; outline-offset: -3px; }
+    .light-card:focus-within { outline-color: var(--brown); }
     .light-card .card-link { color: var(--brown); }
 
     .arrow {
@@ -575,6 +595,7 @@
     .modal.active { display: block; }
 
     .modal-card {
+      position: relative;
       max-width: 1000px;
       margin: auto;
       background: var(--bg);
@@ -729,7 +750,23 @@
        10. MOBILE
     ========================================================== */
     @media (max-width: 850px) {
-      .nav { display: none; }
+      .header-actions { gap: 12px; }
+      .menu-toggle {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-width: 44px; min-height: 44px; border: 1px solid rgba(0,0,0,0.15);
+        border-radius: 8px; background: transparent; color: var(--dark); font: inherit;
+        cursor: pointer;
+      }
+      .nav {
+        display: none; position: absolute; top: 76px; left: 16px; right: 16px;
+        flex-direction: column; gap: 0; padding: 8px;
+        border: 1px solid rgba(0,0,0,0.1); border-radius: 16px;
+        background: var(--bg); box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        font-size: 14px; letter-spacing: 0.12em;
+      }
+      .nav[data-open="true"] { display: flex; }
+      .nav a { display: block; padding: 16px; border-radius: 8px; }
+      .nav a:hover { background: var(--cream); }
       .profile-grid, .modal-body { grid-template-columns: 1fr; }
       .section-head { display: block; }
       .section-head .intro { margin-top: 20px; }
@@ -738,7 +775,9 @@
       .form-grid { grid-template-columns: 1fr; }
       .portrait img { height: 520px; }
       .card { min-width: 82vw; max-width: 82vw; }
-      .arrow { display: none; }
+      .arrow { width: 44px; height: 44px; font-size: 22px; }
+      .arrow.left { left: 8px; }
+      .arrow.right { right: 8px; }
       .hero-content { padding-top: 80px; }
       .modal-title { left: 24px; bottom: 24px; }
       .modal-body { padding: 40px 26px; }
@@ -762,7 +801,8 @@
     </a>
 
     <div class="header-actions">
-    <nav class="nav">
+    <button id="menuToggle" class="menu-toggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
+    <nav id="mainNav" class="nav" aria-label="Navigation principale">
       <a href="#profil">Profil</a>
       <a href="#projets">Projets</a>
       <a href="#approche">Compétences</a>
@@ -848,8 +888,8 @@
         </div>
 
         <div class="slider-wrap">
-          <button class="arrow left" type="button" onclick="scrollSlider('projectsSlider', -420)">←</button>
-          <button class="arrow right" type="button" onclick="scrollSlider('projectsSlider', 420)">→</button>
+          <button class="arrow left" type="button" aria-label="Précédent dans les projets" aria-controls="projectsSlider" onclick="scrollSlider('projectsSlider', -420)">←</button>
+          <button class="arrow right" type="button" aria-label="Suivant dans les projets" aria-controls="projectsSlider" onclick="scrollSlider('projectsSlider', 420)">→</button>
           <div id="projectsSlider" class="slider"></div>
         </div>
       </div>
@@ -866,8 +906,8 @@
         </div>
 
         <div class="slider-wrap">
-          <button class="arrow left" type="button" onclick="scrollSlider('explorationsSlider', -420)">←</button>
-          <button class="arrow right" type="button" onclick="scrollSlider('explorationsSlider', 420)">→</button>
+          <button class="arrow left" type="button" aria-label="Précédent dans les explorations" aria-controls="explorationsSlider" onclick="scrollSlider('explorationsSlider', -420)">←</button>
+          <button class="arrow right" type="button" aria-label="Suivant dans les explorations" aria-controls="explorationsSlider" onclick="scrollSlider('explorationsSlider', 420)">→</button>
           <div id="explorationsSlider" class="slider"></div>
         </div>
       </div>
@@ -902,11 +942,11 @@
   </footer>
 
   <!-- Modale projet / exploration -->
-  <div id="detailModal" class="modal">
+  <div id="detailModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true" tabindex="-1">
     <div class="modal-card">
       <div class="modal-hero">
         <img id="modalImage" src="" alt="">
-        <button class="close" type="button" onclick="closeModal('detailModal')">✕</button>
+        <button class="close" type="button" aria-label="Fermer la fenêtre" onclick="closeModal('detailModal')">✕</button>
         <div class="modal-title">
           <p id="modalMeta" class="meta"></p>
           <h2 id="modalTitle"></h2>
@@ -928,12 +968,12 @@
   </div>
 
   <!-- Modale contact -->
-  <div id="contactModal" class="modal contact-modal">
+  <div id="contactModal" class="modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true" tabindex="-1">
     <div class="modal-card">
-      <button class="close" type="button" onclick="closeModal('contactModal')">✕</button>
+      <button class="close" type="button" aria-label="Fermer la fenêtre" onclick="closeModal('contactModal')">✕</button>
       <div class="contact-head">
         <p class="eyebrow" style="color: var(--gold);">Contact</p>
-        <h2>Discuter d’une opportunité.</h2>
+        <h2 id="contactTitle">Discuter d’une opportunité.</h2>
         <p>Projet touristique, mission, expérience outdoor ou collaboration : envoyez-moi quelques lignes pour ouvrir la discussion.</p>
       </div>
 
@@ -1173,7 +1213,7 @@
 
       projectsSlider.innerHTML = projects.map(function(project, index) {
         return `
-          <article class="card dark-card" onclick="openDetail('project', ${index})">
+          <article class="card dark-card">
             <div class="card-img">
               <img src="${project.image}" alt="${escapeHtml(project.title)}">
             </div>
@@ -1186,7 +1226,7 @@
               <div class="tags">
                 ${project.tags.map(function(tag) { return `<span class="tag">${escapeHtml(tag)}</span>`; }).join("")}
               </div>
-              <div class="card-link">Découvrir le projet →</div>
+              <button class="card-link" type="button" aria-label="Découvrir ${escapeHtml(project.title)}" onclick="openDetail('project', ${index})">Découvrir le projet</button>
             </div>
           </article>
         `;
@@ -1194,7 +1234,7 @@
 
       explorationsSlider.innerHTML = explorations.map(function(exploration, index) {
         return `
-          <article class="card light-card exploration-card" onclick="openDetail('exploration', ${index})">
+          <article class="card light-card exploration-card">
             <div class="card-img">
               <img src="${exploration.image}" alt="${escapeHtml(exploration.title)}">
             </div>
@@ -1203,7 +1243,7 @@
               <h3>${escapeHtml(exploration.title)}</h3>
               <p class="type">${escapeHtml(exploration.subtitle)}</p>
               <p class="desc">${escapeHtml(exploration.description)}</p>
-              <div class="card-link">Découvrir l’exploration →</div>
+              <button class="card-link" type="button" aria-label="Découvrir ${escapeHtml(exploration.title)}" onclick="openDetail('exploration', ${index})">Découvrir l’exploration</button>
             </div>
           </article>
         `;
@@ -1254,24 +1294,86 @@
         `;
       }).join("");
 
-      document.getElementById("detailModal").classList.add("active");
-      document.body.style.overflow = "hidden";
+      openModal("detailModal");
     }
 
-    function openContact() {
-      document.getElementById("contactModal").classList.add("active");
-      document.body.style.overflow = "hidden";
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    const mobileLayout = window.matchMedia("(max-width: 850px)");
+
+    function setMenuOpen(open, restoreFocus = false) {
+      mainNav.dataset.open = String(open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      if (restoreFocus) menuToggle.focus();
     }
+
+    menuToggle.addEventListener("click", function() {
+      setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+    mainNav.querySelectorAll("a").forEach(function(link) {
+      link.addEventListener("click", function() { setMenuOpen(false); });
+    });
+    document.addEventListener("click", function(event) {
+      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) setMenuOpen(false);
+    });
+    document.querySelector(".header").addEventListener("focusout", function(event) {
+      if (event.relatedTarget && !mainNav.contains(event.relatedTarget) && !menuToggle.contains(event.relatedTarget)) {
+        setMenuOpen(false);
+      }
+    });
+    mobileLayout.addEventListener("change", function() { setMenuOpen(false); });
+
+    let activeModal = null;
+    let previousFocus = null;
+    let previousOverflow = "";
+    let backgroundInert = [];
+
+    function openModal(modalId) {
+      if (activeModal) closeModal(activeModal.id);
+      previousFocus = document.activeElement;
+      previousOverflow = document.body.style.overflow;
+      activeModal = document.getElementById(modalId);
+      backgroundInert = Array.from(document.querySelectorAll("body > header, body > main, body > footer"))
+        .map(function(element) { const old = element.inert; element.inert = true; return [element, old]; });
+      activeModal.classList.add("active");
+      activeModal.setAttribute("aria-hidden", "false");
+      activeModal.scrollTop = 0;
+      document.body.style.overflow = "hidden";
+      activeModal.querySelector(".close").focus();
+    }
+
+    function openContact() { openModal("contactModal"); }
 
     function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove("active");
-      document.body.style.overflow = "";
+      const modal = document.getElementById(modalId);
+      if (modal !== activeModal) return;
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      backgroundInert.forEach(function(entry) { entry[0].inert = entry[1]; });
+      document.body.style.overflow = previousOverflow;
+      activeModal = null;
+      if (previousFocus && previousFocus.isConnected) previousFocus.focus();
     }
 
     document.addEventListener("keydown", function(event) {
       if (event.key === "Escape") {
-        closeModal("detailModal");
-        closeModal("contactModal");
+        if (activeModal) { event.preventDefault(); closeModal(activeModal.id); }
+        else if (menuToggle.getAttribute("aria-expanded") === "true") {
+          event.preventDefault(); setMenuOpen(false, true);
+        }
+      }
+      if (event.key === "Tab" && activeModal) {
+        const focusable = Array.from(activeModal.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'
+        )).filter(function(element) { return element.getClientRects().length > 0; });
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (!first) { event.preventDefault(); activeModal.focus(); }
+        else if (event.shiftKey && (document.activeElement === first || !activeModal.contains(document.activeElement))) {
+          event.preventDefault(); last.focus();
+        } else if (!event.shiftKey && (document.activeElement === last || !activeModal.contains(document.activeElement))) {
+          event.preventDefault(); first.focus();
+        }
       }
     });
 
