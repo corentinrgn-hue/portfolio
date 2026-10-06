@@ -456,10 +456,14 @@
     /* =========================================================
        7. APPROCHE / OUTILS / CITATION
     ========================================================== */
+    #approche { scroll-margin-top: 76px; }
+
+    .skills-heading { margin-bottom: 40px; }
+
     .strengths {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
     }
 
     .strength {
@@ -467,42 +471,24 @@
       border: 1px solid rgba(0,0,0,0.1);
       border-radius: 32px;
       padding: 32px;
-      text-align: center;
       box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     }
 
     .strength .icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 24px;
-      border-radius: 999px;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      border-radius: 12px;
       background: #F3E8D8;
-      border: 1px solid rgba(139,111,71,0.2);
+      color: var(--brown);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
     }
 
-    .tools-section { background: var(--cream-2); }
-
-    .tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 48px;
-    }
-
-    .tool {
-      background: white;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 999px;
-      padding: 13px 20px;
-      font-size: 14px;
-      letter-spacing: 0.07em;
-      color: var(--text-soft);
-    }
+    .strength .icon svg { width: 26px; height: 26px; }
+    .strength h3 { line-height: 1.15; }
+    .strength p { margin: 16px 0 0; line-height: 1.7; color: var(--text-soft); }
 
     .quote {
       position: relative;
@@ -884,16 +870,10 @@
       </div>
     </section>
 
-    <section id="approche">
+    <section id="approche" aria-labelledby="skills-title">
       <div class="container">
+        <h2 id="skills-title" class="skills-heading">Compétences</h2>
         <div id="strengths" class="strengths"></div>
-      </div>
-    </section>
-
-    <section class="tools-section">
-      <div class="container" style="text-align:center;">
-        <h2>Des compétences au service de vos projets.</h2>
-        <div id="tools" class="tools"></div>
       </div>
     </section>
 
@@ -1145,39 +1125,27 @@
     ];
 
     const strengths = [
-      {
-        icon: "🧭",
-        title: "Conception de voyages",
-        text: "Création d'itinéraires et d'expériences touristiques adaptés aux attentes des voyageurs."
-      },
-      {
-        icon: "📋",
-        title: "Gestion de projet",
-        text: "Pilotage de projets, coordination de partenaires et développement d'offres touristiques."
-      },
-      {
-        icon: "⛰️",
-        title: "Terrain & outdoor",
-        text: "Connaissance concrète des territoires, des itinéraires et des activités de pleine nature."
-      },
-      {
-        icon: "💻",
-        title: "Tourisme & Digital",
-        text: "Conception de contenus et de solutions numériques pour valoriser les destinations et accompagner les acteurs du tourisme."
-      }
-    ];
-
-    const tools = [
-      "Conception de voyages",
-      "Gestion de projet",
-      "Développement touristique",
-      "Marketing touristique",
-      "Tourisme digital",
-      "Conception d'itinéraires",
-      "Communication digitale",
-      "Intelligence artificielle",
-      "UX / Expérience utilisateur"
-    ];
+  {
+    "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z\"/><path d=\"M9 3v15M15 6v15\"/></svg>",
+    "title": "Conception de voyages & itinéraires",
+    "text": "Concevoir des séjours et des parcours : étapes, prestations, roadbooks, traces GPX et cartographie."
+  },
+  {
+    "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"2\"/><rect x=\"9\" y=\"2\" width=\"6\" height=\"4\" rx=\"1\"/><path d=\"m8 11 1 1 2-2M13 11h3m-8 6 1 1 2-2M13 17h3\"/></svg>",
+    "title": "Pilotage de projets touristiques",
+    "text": "Structurer une offre, coordonner les partenaires et suivre les budgets, les échéances et la réalisation."
+  },
+  {
+    "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"7\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12a24 24 0 0 0 18 0M10 12v3h4v-3\"/></svg>",
+    "title": "Organisation & opérations terrain",
+    "text": "Gérer une agence vélo, organiser la logistique, accompagner les clients et résoudre les imprévus."
+  },
+  {
+    "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M8 21h8M12 16v5m-3-9-3-3 3-3m6 6 3-3-3-3\"/></svg>",
+    "title": "Tourisme & outils numériques",
+    "text": "Créer des sites, des cartes interactives et des contenus pour valoriser une destination ou une offre touristique."
+  }
+];
 
     /* =========================================================
        12. CODE TECHNIQUE
@@ -1199,7 +1167,6 @@
       const projectsSlider = document.getElementById("projectsSlider");
       const explorationsSlider = document.getElementById("explorationsSlider");
       const strengthsContainer = document.getElementById("strengths");
-      const toolsContainer = document.getElementById("tools");
 
       projectsSlider.innerHTML = projects.map(function(project, index) {
         return `
@@ -1249,9 +1216,6 @@
         `;
       }).join("");
 
-      toolsContainer.innerHTML = tools.map(function(tool) {
-        return `<div class="tool">${escapeHtml(tool)}</div>`;
-      }).join("");
     }
 
     function scrollSlider(sliderId, distance) {
